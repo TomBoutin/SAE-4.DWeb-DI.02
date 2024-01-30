@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAME VR</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+  <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+  <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+  
+</head>
+
+<body>
+  <a-scene cursor="rayOrigin: mouse" inspector-plugin-recast>
+    <!-- ASSETS -->
+    <a-assets>
+      <img src="./Texture/wood.png" id="wood">
+      <a-asset-item id="camion" src="./model_3d/garbageTRUCK/trashtruck_MODEL.gltf"></a-asset-item>
+    </a-assets>
+
+    <!-- CAMERA -->
+<a-entity movement-controls="constrainToNavMesh:true" id="cam">
+  
+  <a-entity camera look-controls position="0 1.6 0"></a-entity>
+</a-entity>
+    <!-- NAV -->
+
+  <a-gltf-model></a-gltf-model>
+
+    <!-- SKY -->
+
+    <!-- GROUND -->
+
+    <!-- OBJECTS -->
+
+    <a-entity gltf-model="#camion" position="0 0 -10" >
+    </a-entity>
+
+    <a-plane src="./Texture/wood.png" width="50" height="50" rotation="-90 0 0" position="0 -1 0"></a-plane>
+
+    <!-- LIGHTS -->
+
+    <!-- CONTROLLERS -->
+
+    <!-- SCRIPTS -->
+
+    <script>
+      // EXEMPLE DE CE QUE TU PEUX FAIRE AVEC LE JS
+
+      //  document.querySelector('#myBox').addEventListener('click', function () {
+      //      var box = document.querySelector('#myBox');
+      //      box.setAttribute('color', '#' + Math.floor(Math.random() * 16777215).toString(16));
+      //  });    document.querySelector('#rightController').addEventListener('triggerdown', function () {
+      //      var s = document.querySelector("#mySphere");
+      //      s.setAttribute('color', '#' + Math.floor(Math.random() * 16777215).toString(16));
+      //  });
+    </script>
+  </a-scene>
+</body>
+
+</html>
