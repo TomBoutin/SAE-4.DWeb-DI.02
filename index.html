@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GAME VR</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
@@ -14,8 +14,6 @@
   <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
   <script
     src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
-
-
 </head>
 
 <body>
@@ -32,53 +30,162 @@
       <a-asset-item id="bat2" src="./model_3d/Building2/Building.glb"></a-asset-item>
       <a-asset-item id="bat3" src="./model_3d/Building3/Building.glb"></a-asset-item>
       <a-asset-item id="bat4" src="./model_3d/Building4/Building.glb"></a-asset-item>
-    
     </a-assets>
 
     <!-- CAMERA -->
     <a-entity movement-controls id="cam">
-
       <a-entity camera look-controls position="0 1.6 0"></a-entity>
     </a-entity>
 
-
     <!-- NAV -->
-
 
     <!-- SKY -->
 
-    <a-entity gltf-model="#ciel" rotation="0 150 0"></a-entity>
+    <a-entity gltf-model="#ciel" rotation="0 150 0" position="0 100 0"></a-entity>
 
     <!-- <a-sky src="#sky" ></a-sky> -->
-
-
 
     <!-- GROUND -->
 
     <!-- OBJECTS -->
     <a-entity>
-      <a-plane color="#666666" rotation="-90 0 0" position="0 -.25 -25" height="500" width="10">
+      <a-entity>
+        <!-- Rue 1 -->
+        <!-- Route -->
+        <a-plane color="#666666" rotation="-90 0 0" position="0 -.25 -25" height="75" width="10">
+          <a-plane color="#FFF" position="0 -41 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -35 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -29 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -23 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -17 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -11 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -5 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 1 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 7 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 13 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 19 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 25 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 31 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 37 .002" height="2" width="0.5">
+          </a-plane>
+        </a-plane>
 
-        <a-plane color="#FFF" position="0 -101 .002" height="2" width="0.5">
+        <!-- Trottoir -->
+        <a-box color="#C1C1C1" depth="74.5" width=".5" height=".5" position="5 -.25 -25.5">
+          <a-plane color="#848484" rotation="-90 0 0" position="2.75 0.25 0" height="73.5" width="5">
+          </a-plane>
+        </a-box>
+
+        <a-box color="#C1C1C1" depth="94.5" width=".5" height=".5" position="-5 -.25 -25">
+          <a-plane color="#848484" rotation="-90 0 0" position="-2.75 0.25 0" height="104.5" width="5">
+          </a-plane>
+        </a-box>
+      </a-entity>
+
+      <a-entity position="55 0 17" rotation="0 90 0">
+        <!-- Rue 2 -->
+        <!-- Route -->
+        <a-plane color="#666666" rotation="-90 0 0" position="0 -.25 89.5" height="300" width="10">
+          <a-plane color="#FFF" position="0 -41 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -35 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -29 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -23 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -17 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -11 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -5 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 1 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 7 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 13 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 19 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 25 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 31 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 37 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 43 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 49 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 55 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 61 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 67 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 73 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 79 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 85 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 91 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 97 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 103 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 109 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 115 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 121 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 127 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 133 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 139 .002" height="2" width="0.5">
+          </a-plane>
         </a-plane>
-        <a-plane color="#FFF" position="0 -95 .002" height="2" width="0.5">
-        </a-plane>
-        <a-plane color="#FFF" position="0 -89 .002" height="2" width="0.5">
-        </a-plane>
-        <a-plane color="#FFF" position="0 -83 .002" height="2" width="0.5">
-        </a-plane>
-        <a-plane color="#FFF" position="0 -77 .002" height="2" width="0.5">
-        </a-plane>
-        <a-plane color="#FFF" position="0 -71 .002" height="2" width="0.5">
-        </a-plane>
-        <a-plane color="#FFF" position="0 -65 .002" height="2" width="0.5">
-        </a-plane>
-        <a-plane color="#FFF" position="0 -59 .002" height="2" width="0.5">
-        </a-plane>
-        <a-plane color="#FFF" position="0 -53 .002" height="2" width="0.5">
-        </a-plane>
-        <a-plane color="#FFF" position="0 -47 .002" height="2" width="0.5">
-        </a-plane>
+
+        <!-- Trottoir -->
+        <a-box color="#C1C1C1" depth="50.5" width=".5" height=".5" position="5 -.25 -25">
+          <a-plane color="#848484" rotation="-90 0 0" position="2.75 0.25 0" height="49.5" width="5">
+          </a-plane>
+        </a-box>
+
+        <a-box color="#C1C1C1" depth="10.5" width=".5" height=".5" position="-5 -.25 -55">
+          <a-plane color="#848484" rotation="-90 0 0" position="-2.75 0.25 -4.75" height="19.5" width="5">
+          </a-plane>
+        </a-box>
+
+        <a-box color="#C1C1C1" depth="275" width=".5" height=".5" position="-5 -.25 97.5">
+          <a-plane color="#848484" rotation="-90 0 0" position="-2.75 0.25 -4.75" height="264.5" width="5">
+          </a-plane>
+        </a-box>
+
+        <a-box color="#C1C1C1" depth="220" width=".5" height=".5" position="5 -.25 119.75">
+          <a-plane color="#848484" rotation="-90 0 0" position="2.75 0.25 0" height="219" width="5">
+          </a-plane>
+        </a-box>
+      </a-entity>
+
+      <a-plane color="#666666" rotation="-90 0 0" position="10.25 -.25 122" height="200" width="10">
         <a-plane color="#FFF" position="0 -41 .002" height="2" width="0.5">
         </a-plane>
         <a-plane color="#FFF" position="0 -35 .002" height="2" width="0.5">
@@ -127,24 +234,171 @@
         </a-plane>
         <a-plane color="#FFF" position="0 97 .002" height="2" width="0.5">
         </a-plane>
-        <a-plane color="#FFF" position="0 103 .002" height="2" width="0.5">
-        </a-plane>
-        <a-plane color="#FFF" position="0 109 .002" height="2" width="0.5">
-        </a-plane>
-        <a-plane color="#FFF" position="0 115 .002" height="2" width="0.5">
-        </a-plane>
+
+        <a-box color="#C1C1C1" depth="200" width=".5" height=".5" position="5 0.25 0" rotation="90 0 0">
+          <a-plane color="#848484" rotation="-90 0 0" position="2.75 0.25 0" height="199" width="5">
+          </a-plane>
+        </a-box>
+
+        <a-box color="#C1C1C1" depth="200" width=".5" height=".5" position="-5 0.25 0" rotation="90 0 0">
+          <a-plane color="#848484" rotation="-90 0 0" position="-2.75 0.25 0" height="199" width="5">
+          </a-plane>
+        </a-box>
       </a-plane>
 
-      <a-box color="#C1C1C1" depth="500" width=".5" height=".5" position="5 -.25 -25">
-        <a-plane color="#848484" rotation="-90 0 0" position="2.75 0.25 0" height="500" width="5">
+      <a-plane color="#666666" rotation="-90 0 0" position="60 -.25 -25" height="75" width="10" id="route3">
+        <a-plane color="#FFF" position="0 -35 .002" height="2" width="0.5">
         </a-plane>
-      </a-box>
-
-      <a-box color="#C1C1C1" depth="500" width=".5" height=".5" position="-5 -.25 -25">
-        <a-plane color="#848484" rotation="-90 0 0" position="-2.75 0.25 0" height="500" width="5">
+        <a-plane color="#FFF" position="0 -29 .002" height="2" width="0.5">
         </a-plane>
-      </a-box>
+        <a-plane color="#FFF" position="0 -23 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -17 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -11 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -5 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 1 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 7 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 13 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 19 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 25 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 31 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 37 .002" height="2" width="0.5">
+        </a-plane>
 
+        <a-box color="#C1C1C1" depth="75" width=".5" height=".5" position="5 5.28422 0" rotation="90 0 0"
+          id="bord-trottoir-3-1" geometry="depth: 85">
+          <a-plane color="#848484" rotation="-90 0 0" position="2.75 0.25 -5.25" height="75" width="5" id="trottoir-3-1"
+            geometry="height: 85">
+          </a-plane>
+        </a-box>
+
+        <a-box color="#C1C1C1" depth="75" width=".5" height=".5" position="-5 0.25 0" rotation="90 0 0"
+          id="bord-trottoir-3-2">
+          <a-plane color="#848484" rotation="-90 0 0" position="-2.75 0.25 0" height="74" width="5" id="trottoir-3-1">
+          </a-plane>
+        </a-box>
+      </a-plane>
+
+      <a-entity position="55 0 -67.5" rotation="0 90 0" id="rue4">
+        <!-- Rue 4 -->
+        <!-- Route -->
+        <a-plane color="#666666" rotation="-90 0 0" position="0 -.25 -25" height="70" width="10" id="route4">
+          <a-plane color="#FFF" position="0 -29 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -23 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -17 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -11 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 -5 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 1 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 7 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 13 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 19 .002" height="2" width="0.5">
+          </a-plane>
+          <a-plane color="#FFF" position="0 25 .002" height="2" width="0.5">
+          </a-plane>
+        </a-plane>
+
+        <!-- Trottoir -->
+        <a-box color="#C1C1C1" depth="50.5" width=".5" height=".5" position="5 -0.25 2.75" id="rebord-trottoir-4-1"
+          geometry="depth: 15">
+          <a-plane color="#848484" rotation="-90 0 0" position="2.75 0.25 0" height="49.5" width="5" id="trottoir-4-1"
+            geometry="height: 15">
+          </a-plane>
+        </a-box>
+
+        <a-box color="#C1C1C1" depth="10.5" width=".5" height=".5" position="-5 -0.25 -25.25" id="rebord-trottoir-4-2"
+          geometry="depth: 50">
+          <a-plane color="#848484" rotation="-90 0 0" position="-2.75 0.25 0" height="19.5" width="5" id="trottoir-4-2"
+            geometry="height: 49">
+          </a-plane>
+        </a-box>
+
+        <a-box color="#C1C1C1" depth="50.5" width=".5" height=".5" position="5 -0.25 -37.75" id="rebord-trottoir-4-3"
+          geometry="depth: 45">
+          <a-plane color="#848484" rotation="-90 0 0" position="2.75 0.25 0" height="49.5" width="5" id="trottoir-4-3"
+            geometry="height: 45">
+          </a-plane>
+        </a-box>
+      </a-entity>
+
+      <a-plane color="#666666" rotation="-90 0 0" position="45 -0.25 -172" height="200" width="10" id="rue5">
+        <a-plane color="#FFF" position="0 -95 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -89 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -83 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -77 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -71 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -65 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -59 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -53 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -47 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -41 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -35 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -29 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -23 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -17 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -11 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 -5 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 1 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 7 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 13 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 19 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 25 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 31 .002" height="2" width="0.5">
+        </a-plane>
+        <a-plane color="#FFF" position="0 37 .002" height="2" width="0.5">
+        </a-plane>
+
+        <a-box color="#C1C1C1" depth="200" width=".5" height=".5" position="5 0.25 0" rotation="90 0 0"
+          id="bord-trottoir-5-1">
+          <a-plane color="#848484" rotation="-90 0 0" position="2.75 0.25 0" height="199" width="5" id="trottoir-5-1">
+          </a-plane>
+        </a-box>
+
+        <a-box color="#C1C1C1" depth="200" width=".5" height=".5" position="-5 0.25 0" rotation="90 0 0"
+          id="bord-trottoir-5-2">
+          <a-plane color="#848484" rotation="-90 0 0" position="-2.75 0.25 0" height="199" width="5" id="trottoir-5-2">
+          </a-plane>
+        </a-box>
+      </a-plane>
+
+      <!-- Arbres -->
       <a-entity position="7 0 0">
         <a-entity position="0 0 -40">
           <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 279 0">
@@ -159,7 +413,6 @@
           </a-entity>
 
           <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
         </a-entity>
 
         <a-entity position="0 0 -30">
@@ -175,7 +428,6 @@
           </a-entity>
 
           <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
         </a-entity>
 
         <a-entity position="0 0 -20">
@@ -191,12 +443,10 @@
           </a-entity>
 
           <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
         </a-entity>
 
         <a-entity position="0 0 -10">
-          <a-entity gltf-model="#tree" position=".25 2.75 0">
-          </a-entity>
+          <a-entity gltf-model="#tree" position=".25 2.75 0"> </a-entity>
           <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -6">
           </a-entity>
           <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -8">
@@ -207,7 +457,6 @@
           </a-entity>
           <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
         </a-entity>
-
 
         <a-entity position="0 0 0">
           <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 180 0">
@@ -222,59 +471,8 @@
           </a-entity>
 
           <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
-        </a-entity>
-
-        <a-entity position="0 0 10">
-          <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 199 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -6">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -8">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-7.25 0 0" rotation="0 90 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-5.5 0 0" rotation="0 90 0">
-          </a-entity>
-
-          <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
-        </a-entity>
-
-
-        <a-entity position="0 0 20">
-          <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 54 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -6">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -8">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-7.25 0 0" rotation="0 90 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-5.5 0 0" rotation="0 90 0">
-          </a-entity>
-
-          <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
-        </a-entity>
-
-        <a-entity position="0 0 30">
-          <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 166 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -6">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -8">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-7.25 0 0" rotation="0 90 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-5.5 0 0" rotation="0 90 0">
-          </a-entity>
-
-          <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
         </a-entity>
       </a-entity>
-
 
       <a-entity position="-7.5 0 0">
         <a-entity position="0 0 -40">
@@ -290,7 +488,6 @@
           </a-entity>
 
           <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
         </a-entity>
 
         <a-entity position="0 0 -30">
@@ -306,7 +503,6 @@
           </a-entity>
 
           <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
         </a-entity>
 
         <a-entity position="0 0 -20">
@@ -322,12 +518,10 @@
           </a-entity>
 
           <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
         </a-entity>
 
         <a-entity position="0 0 -10">
-          <a-entity gltf-model="#tree" position=".25 2.75 0">
-          </a-entity>
+          <a-entity gltf-model="#tree" position=".25 2.75 0"> </a-entity>
           <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -6">
           </a-entity>
           <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -8">
@@ -338,7 +532,6 @@
           </a-entity>
           <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
         </a-entity>
-
 
         <a-entity position="0 0 0">
           <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 180 0">
@@ -353,91 +546,228 @@
           </a-entity>
 
           <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
-        </a-entity>
-
-        <a-entity position="0 0 10">
-          <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 199 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -6">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -8">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-7.25 0 0" rotation="0 90 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-5.5 0 0" rotation="0 90 0">
-          </a-entity>
-
-          <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
-        </a-entity>
-
-
-        <a-entity position="0 0 20">
-          <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 54 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -6">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -8">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-7.25 0 0" rotation="0 90 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-5.5 0 0" rotation="0 90 0">
-          </a-entity>
-
-          <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
-        </a-entity>
-
-        <a-entity position="0 0 30">
-          <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 166 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -6">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="0 0 -8">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-7.25 0 0" rotation="0 90 0">
-          </a-entity>
-          <a-entity gltf-model="#barriere" scale=".2 .2" position="-5.5 0 0" rotation="0 90 0">
-          </a-entity>
-
-          <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-
         </a-entity>
       </a-entity>
 
-      <a-entity gltf-model="#bat1" position="15 -0.49 40" scale="5 5 5" rotation="0 -90 0"></a-entity>
-      <a-entity gltf-model="#bat2" position="15 -0.49 30" scale="5 5 5" rotation="0 -90 0"></a-entity>
-      <a-entity gltf-model="#bat3" position="15 -0.49 20" scale="5 5 5" rotation="0 -90 0"></a-entity>
-      <a-entity gltf-model="#bat4" position="15 -0.49 10" scale="5 5 5" rotation="0 -90 0"></a-entity>
+      <a-entity id="maison-rue1" position="0 0 -8.19743">
+        <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
+          id="rue1-maison1"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 20" scale="5 5 5" rotation="0 90 0"
+          id="rue1-maison2"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 10" scale="5 5 5" rotation="0 90 0"
+          id="rue1-maison3"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 0" scale="5 5 5" rotation="0 90 0"
+          id="rue1-maison3"></a-entity>
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -10" scale="5 5 5" rotation="0 90 0"
+          id="rue1-maison4"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -20" scale="5 5 5" rotation="0 90 0"
+          id="rue1-maison5"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 -30" scale="5 5 5" rotation="0 90 0"
+          id="rue1-maison6"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 -40" scale="5 5 5" rotation="0 90 0"
+          id="rue1-maison7"></a-entity>
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -70" scale="5 5 5" rotation="0 90 0"
+          id="rue1-maison8"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -60" scale="5 5 5" rotation="0 90 0"
+          id="rue1-maison9"></a-entity>
+      </a-entity>
 
-      <a-entity gltf-model="#bat1" position="15 -0.49 0" scale="5 5 5" rotation="0 -90 0"></a-entity>
-      <a-entity gltf-model="#bat2" position="15 -0.49 -10" scale="5 5 5" rotation="0 -90 0"></a-entity>
-      <a-entity gltf-model="#bat3" position="15 -0.49 -20" scale="5 5 5" rotation="0 -90 0"></a-entity>
-      <a-entity gltf-model="#bat4" position="15 -0.49 -30" scale="5 5 5" rotation="0 -90 0"></a-entity>
+      <a-entity id="maison-rue2bis" rotation="0 0 0" position="10.22555 0 99.20835">
+        <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis-maison1"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 20" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis-maison2"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 10" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis-maison3"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 0" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis-maison3"></a-entity>
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -10" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis-maison4"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -20" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis-maison5"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 -30" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis-maison6"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 -40" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis-maison7"></a-entity>
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -50" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis-maison8"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -60" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis-maison9"></a-entity>
+      </a-entity>
 
-      <a-entity gltf-model="#bat1" position="15 -0.49 -40" scale="5 5 5" rotation="0 -90 0"></a-entity>
-      <a-entity gltf-model="#bat2" position="15 -0.49 -50" scale="5 5 5" rotation="0 -90 0"></a-entity>
-      <a-entity gltf-model="#bat3" position="15 -0.49 -60" scale="5 5 5" rotation="0 -90 0"></a-entity>
-      <a-entity gltf-model="#bat4" position="15 -0.49 -70" scale="5 5 5" rotation="0 -90 0"></a-entity>
+      <a-entity id="maison-rue2bis1" rotation="0 180 0" position="10 0 68.74244">
+        <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis1-maison1"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 20" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis1-maison2"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 10" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis1-maison3"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 0" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis1-maison3"></a-entity>
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -10" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis1-maison4"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -20" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis1-maison5"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 -30" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis1-maison6"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 -40" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis1-maison7"></a-entity>
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -50" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis1-maison8"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -60" scale="5 5 5" rotation="0 90 0"
+          id="rue2bis1-maison9"></a-entity>
+      </a-entity>
 
-      <a-entity gltf-model="#bat1" position="-15 -0.49 40" scale="5 5 5" rotation="0 90 0"></a-entity>
-      <a-entity gltf-model="#bat2" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"></a-entity>
-      <a-entity gltf-model="#bat3" position="-15 -0.49 20" scale="5 5 5" rotation="0 90 0"></a-entity>
-      <a-entity gltf-model="#bat4" position="-15 -0.49 10" scale="5 5 5" rotation="0 90 0"></a-entity>
+      <a-entity id="maison-rue2" rotation="0 90 0" position="65.5 0 17.12874">
+        <a-entity gltf-model="#bat3" position="-15 -0.49 100" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison-7"></a-entity>
+        <a-entity gltf-model="#bat2" position="-15 -0.49 90" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison-6"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 80" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison-5"></a-entity>
 
-      <a-entity gltf-model="#bat1" position="-15 -0.49 0" scale="5 5 5" rotation="0 90 0"></a-entity>
-      <a-entity gltf-model="#bat2" position="-15 -0.49 -10" scale="5 5 5" rotation="0 90 0"></a-entity>
-      <a-entity gltf-model="#bat3" position="-15 -0.49 -20" scale="5 5 5" rotation="0 90 0"></a-entity>
-      <a-entity gltf-model="#bat4" position="-15 -0.49 -30" scale="5 5 5" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 70" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison-4"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 60" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison-3"></a-entity>
+        <a-entity gltf-model="#bat2" position="-15 -0.49 50" scale="5 5 5" rotation="0 90 0"
+        id="rue2-maison-2"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 40" scale="5 5 5" rotation="0 90 0"
+        id="rue2-maison-1"></a-entity>
 
-      <a-entity gltf-model="#bat1" position="-15 -0.49 -40" scale="5 5 5" rotation="0 90 0"></a-entity>
-      <a-entity gltf-model="#bat2" position="-15 -0.49 -50" scale="5 5 5" rotation="0 90 0"></a-entity>
-      <a-entity gltf-model="#bat3" position="-15 -0.49 -60" scale="5 5 5" rotation="0 90 0"></a-entity>
-      <a-entity gltf-model="#bat4" position="-15 -0.49 -70" scale="5 5 5" rotation="0 90 0"></a-entity>d
+        <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison1"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 20" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison2"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 10" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison3"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 0" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison3"></a-entity>
 
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -10" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison4"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -20" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison5"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 -30" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison6"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 -40" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison7"></a-entity>
 
+        <a-entity gltf-model="#bat2" position="-12.06758 -0.49 -80.42323" scale="5 5 5" rotation="0 -90 0"
+          id="rue2-maison8"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -70.51759" scale="5 5 5" rotation="0 90 0"
+          id="rue2-maison9"></a-entity>
+      </a-entity>
 
+      <a-entity id="maison-rue2ter" rotation="0 -90 0" position="182.97109 0 16.86485">
+        <a-entity gltf-model="#bat3" position="-15 -0.49 100" scale="5 5 5" rotation="0 90 0"
+          id="rue2ter-maison-7"></a-entity>
+        <a-entity gltf-model="#bat2" position="-15 -0.49 90" scale="5 5 5" rotation="0 90 0"
+          id="rue2ter-maison-6"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 80" scale="5 5 5" rotation="0 90 0"
+          id="rue2ter-maison-5"></a-entity>
+
+        <a-entity gltf-model="#bat4" position="-15 -0.49 70" scale="5 5 5" rotation="0 90 0"
+          id="rue2ter-maison-4"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 60" scale="5 5 5" rotation="0 90 0"
+          id="rue2ter-maison-3"></a-entity>
+        <a-entity gltf-model="#bat2" position="-15 -0.49 50" scale="5 5 5" rotation="0 90 0"
+        id="rue2ter-maison-2"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 40" scale="5 5 5" rotation="0 90 0"
+        id="rue2ter-maison-1"></a-entity>
+
+        <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
+          id="rue2ter-maison1"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 20" scale="5 5 5" rotation="0 90 0"
+          id="rue2ter-maison2"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 10" scale="5 5 5" rotation="0 90 0"
+          id="rue2ter-maison3"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 0" scale="5 5 5" rotation="0 90 0"
+          id="rue2ter-maison3"></a-entity>
+      </a-entity>
+
+      <a-entity id="maison-rue3" rotation="0 180 0" position="59.90226 0 -38.05108">
+        <a-entity gltf-model="#bat1" position="-15 -0.49 40" scale="5 5 5" rotation="0 90 0"
+        id="rue3-maison-1"></a-entity>
+
+        <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
+          id="rue3-maison1"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 20" scale="5 5 5" rotation="0 90 0"
+          id="rue3-maison2"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 10" scale="5 5 5" rotation="0 90 0"
+          id="rue3-maison3"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 0" scale="5 5 5" rotation="0 90 0"
+          id="rue3-maison3"></a-entity>
+
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -10" scale="5 5 5" rotation="0 90 0"
+          id="rue3-maison4"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -20" scale="5 5 5" rotation="0 90 0"
+          id="rue3-maison5"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 -30" scale="5 5 5" rotation="0 90 0"
+          id="rue3-maison6"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 -40" scale="5 5 5" rotation="0 90 0"
+          id="rue3-maison7"></a-entity>
+      </a-entity>
+
+      <a-entity id="maison-rue4bis1" rotation="0 180 0" position="44.97626 0 -122.50481">
+
+        <a-entity gltf-model="#bat1" position="-22.1581 -0.49 -40.13206" scale="5 5 10" rotation="0 -90 0"
+        id="rue4bis1-maison-2"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 40" scale="5 5 5" rotation="0 90 0"
+        id="rue4bis1-maison-1"></a-entity>
+
+        <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis1-maison1"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 20" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis1-maison2"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 10" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis1-maison3"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 0" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis1-maison3"></a-entity>
+
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -10" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis1-maison4"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -20" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis1-maison5"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 -30" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis1-maison6"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 -40" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis1-maison7"></a-entity>
+      </a-entity>
+
+      <a-entity id="maison-rue4bis2" rotation="0 0 0" position="44.97626 0 -120.23277">
+        <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis2-maison1"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 20" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis2-maison2"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 10" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis2-maison3"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 0" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis2-maison3"></a-entity>
+
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -10" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis2-maison4"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -20" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis2-maison5"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 -30" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis2-maison6"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 -40" scale="5 5 5" rotation="0 90 0"
+          id="rue4bis2-maison7"></a-entity>
+      </a-entity>
+
+      <a-entity id="maison-rue4" rotation="0 -90 0" position="-10.03293 0 -67.64313">
+        <a-entity gltf-model="#bat1" position="-15 -0.49 0" scale="5 5 5" rotation="0 90 0"
+          id="rue4-maison3"></a-entity>
+
+        <a-entity gltf-model="#bat2" position="-15 -0.49 -10" scale="5 5 5" rotation="0 90 0"
+          id="rue4-maison4"></a-entity>
+        <a-entity gltf-model="#bat3" position="-15 -0.49 -20" scale="5 5 5" rotation="0 90 0"
+          id="rue4-maison5"></a-entity>
+        <a-entity gltf-model="#bat4" position="-15 -0.49 -30" scale="5 5 5" rotation="0 90 0"
+          id="rue4-maison6"></a-entity>
+        <a-entity gltf-model="#bat1" position="-15 -0.49 -40" scale="5 5 5" rotation="0 90 0"
+          id="rue4-maison7"></a-entity>
+      </a-entity>
 
 
     </a-entity>
