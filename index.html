@@ -21,19 +21,21 @@
     inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
     <!-- ASSETS -->
     <a-assets>
+      <a-asset-item id="ciel" src="./Texture/free_-_skybox_anime_sky.glb"></a-asset-item>
+      <img src="./Texture/sable.jpg" id="sable">
+
+
       <a-asset-item id="tree" src="./model_3d/Tree/tree-test.glb"></a-asset-item>
       <a-asset-item id="barriere" src="./model_3d/Barriere/Picket Fence.glb"></a-asset-item>
-
-      <a-asset-item id="ciel" src="./Texture/free_-_skybox_anime_sky.glb"></a-asset-item>
-
       <a-asset-item id="bat1" src="./model_3d/Building1/Building.glb"></a-asset-item>
       <a-asset-item id="bat2" src="./model_3d/Building2/Building.glb"></a-asset-item>
       <a-asset-item id="bat3" src="./model_3d/Building3/Building.glb"></a-asset-item>
       <a-asset-item id="bat4" src="./model_3d/Building4/Building.glb"></a-asset-item>
+
     </a-assets>
 
     <!-- CAMERA -->
-    <a-entity movement-controls id="cam">
+    <a-entity movement-controls id="cam" position="0 0 -57.81063">
       <a-entity camera look-controls position="0 1.6 0"></a-entity>
     </a-entity>
 
@@ -49,6 +51,7 @@
 
     <!-- OBJECTS -->
     <a-entity>
+      <!-- Routes -->
       <a-entity>
         <!-- Rue 1 -->
         <!-- Route -->
@@ -549,6 +552,8 @@
         </a-entity>
       </a-entity>
 
+      <!-- Maison -->
+
       <a-entity id="maison-rue1" position="0 0 -8.19743">
         <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
           id="rue1-maison1"></a-entity>
@@ -631,9 +636,9 @@
         <a-entity gltf-model="#bat3" position="-15 -0.49 60" scale="5 5 5" rotation="0 90 0"
           id="rue2-maison-3"></a-entity>
         <a-entity gltf-model="#bat2" position="-15 -0.49 50" scale="5 5 5" rotation="0 90 0"
-        id="rue2-maison-2"></a-entity>
+          id="rue2-maison-2"></a-entity>
         <a-entity gltf-model="#bat1" position="-15 -0.49 40" scale="5 5 5" rotation="0 90 0"
-        id="rue2-maison-1"></a-entity>
+          id="rue2-maison-1"></a-entity>
 
         <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
           id="rue2-maison1"></a-entity>
@@ -672,9 +677,9 @@
         <a-entity gltf-model="#bat3" position="-15 -0.49 60" scale="5 5 5" rotation="0 90 0"
           id="rue2ter-maison-3"></a-entity>
         <a-entity gltf-model="#bat2" position="-15 -0.49 50" scale="5 5 5" rotation="0 90 0"
-        id="rue2ter-maison-2"></a-entity>
+          id="rue2ter-maison-2"></a-entity>
         <a-entity gltf-model="#bat1" position="-15 -0.49 40" scale="5 5 5" rotation="0 90 0"
-        id="rue2ter-maison-1"></a-entity>
+          id="rue2ter-maison-1"></a-entity>
 
         <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
           id="rue2ter-maison1"></a-entity>
@@ -688,7 +693,7 @@
 
       <a-entity id="maison-rue3" rotation="0 180 0" position="59.90226 0 -38.05108">
         <a-entity gltf-model="#bat1" position="-15 -0.49 40" scale="5 5 5" rotation="0 90 0"
-        id="rue3-maison-1"></a-entity>
+          id="rue3-maison-1"></a-entity>
 
         <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
           id="rue3-maison1"></a-entity>
@@ -712,9 +717,9 @@
       <a-entity id="maison-rue4bis1" rotation="0 180 0" position="44.97626 0 -122.50481">
 
         <a-entity gltf-model="#bat1" position="-22.1581 -0.49 -40.13206" scale="5 5 10" rotation="0 -90 0"
-        id="rue4bis1-maison-2"></a-entity>
+          id="rue4bis1-maison-2"></a-entity>
         <a-entity gltf-model="#bat1" position="-15 -0.49 40" scale="5 5 5" rotation="0 90 0"
-        id="rue4bis1-maison-1"></a-entity>
+          id="rue4bis1-maison-1"></a-entity>
 
         <a-entity gltf-model="#bat4" position="-15 -0.49 30" scale="5 5 5" rotation="0 90 0"
           id="rue4bis1-maison1"></a-entity>
@@ -769,6 +774,20 @@
           id="rue4-maison7"></a-entity>
       </a-entity>
 
+      <!-- Sable -->
+      <a-plane src="#sable" id="sol-sable" geometry="height: 64; width: 39.5" position="30 0 -25.25" rotation="-90 0 0"
+        material="repeat: 10 10; offset: 0 0; metalness: 0; roughness: 1"></a-plane>
+
+      <!-- Ruelle -->
+
+      <a-entity id="ruelle" position="-22.40381 0 -58.26864">
+        <a-plane id="ruelle-sol" position="0.3637 0 0" geometry="height: 12; width: 25" color="#848484" rotation="-90 0 0">
+        </a-plane>
+
+<a-plane id="ruelle-mur1">
+</a-plane>
+
+      </a-entity>
 
     </a-entity>
 
