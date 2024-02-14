@@ -13,10 +13,15 @@
     src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
   <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
   <script
-    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
+  src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
 </head>
 
 <body>
+
+
+  
+  
+  
   <a-scene cursor="rayOrigin: mouse" inspector-plugin-recast physics="debug: true"
     inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
     <!-- ASSETS -->
@@ -39,11 +44,19 @@
       <a-asset-item id="box" src="./model_3d/box/Cardboard Boxes.glb"></a-asset-item>
       <a-asset-item id="poubelle" src="./model_3d/poubelle/Trashcan.glb"></a-asset-item>
 
+      <a-asset-item id="canette" src="./model_3d/OBJETS_INTERACTION/Canette/Crushed Soda Can.glb"></a-asset-item>
+
 
     </a-assets>
+    <!-- SCORE -->
+
+
+
+
+
 
     <!-- CAMERA -->
-    <a-entity movement-controls id="cam" position="0 0 -57.81063">
+    <a-entity movement-controls id="cam" position="0 0 0">
       <a-entity camera look-controls position="0 1.6 0"></a-entity>
     </a-entity>
 
@@ -1168,16 +1181,30 @@
 
     <!-- SCRIPTS -->
 
-    <script>
-      // EXEMPLE DE CE QUE TU PEUX FAIRE AVEC LE JS
+    <a-entity gltf-model="#canette" id="canette1" scale="1.3 1.3 1.3"></a-entity>
 
-      //  document.querySelector('#myBox').addEventListener('click', function () {
-      //      var box = document.querySelector('#myBox');
-      //      box.setAttribute('color', '#' + Math.floor(Math.random() * 16777215).toString(16));
-      //  });    document.querySelector('#rightController').addEventListener('triggerdown', function () {
-      //      var s = document.querySelector("#mySphere");
-      //      s.setAttribute('color', '#' + Math.floor(Math.random() * 16777215).toString(16));
-      //  });
+    <h3 style="z-index: 50; color: black; position: absolute; top: 5px; left: 5px; user-select: none;">SCORE : <span id="score">0</span></h3>
+
+    <script>
+
+      document.querySelector('#canette1').addEventListener('click', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 1;
+        var canette = document.querySelector('#canette1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+       });
+
+      document.querySelector('#canette1').addEventListener('triggerdown', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 1;
+        var canette = document.querySelector('#canette1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+       });
     </script>
   </a-scene>
 </body>
