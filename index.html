@@ -51,6 +51,18 @@
       <a-asset-item id="poubelle" src="./model_3d/poubelle/Trashcan.glb"></a-asset-item>
       <a-asset-item id="abribus" src="./model_3d/Abribus/Bus Stop.glb"></a-asset-item>
 
+      <a-asset-item id="playground1" src="./model_3d/Playground/Jungle_gym.glb"></a-asset-item>
+      <a-asset-item id="playground2" src="./model_3d/Playground/Play_Structure.glb"></a-asset-item>
+      <a-asset-item id="playground3" src="./model_3d/Playground/Seesaw.glb"></a-asset-item>
+      <a-asset-item id="playground4" src="./model_3d/Playground/Slide.glb"></a-asset-item>
+      <a-asset-item id="playground5" src="./model_3d/Playground/Swing_set.glb"></a-asset-item>
+      <a-asset-item id="tree_parc1" src="./model_3d/Playground/Tree1.glb"></a-asset-item>
+      <a-asset-item id="tree_parc2" src="./model_3d/Playground/Tree2.glb"></a-asset-item>
+      <a-asset-item id="bench_parc" src="./model_3d/Playground/Bench.glb"></a-asset-item>
+      <a-asset-item id="benchtable_parc" src="./model_3d/Playground/Park_Bench.glb"></a-asset-item>
+      <a-asset-item id="bush1_parc" src="./model_3d/Playground/Bush.glb"></a-asset-item>
+      <a-asset-item id="bush2_parc" src="./model_3d/Playground/Shrub.glb"></a-asset-item>
+
       <a-asset-item id="canette" src="./model_3d/OBJETS_INTERACTION/Canette/Crushed Soda Can.glb"></a-asset-item>
       <a-asset-item id="bouteille" src="./model_3d/OBJETS_INTERACTION/Bouteille/Bottle_Plastic.glb"></a-asset-item>
       <a-asset-item id="boite_pizza" src="./model_3d/OBJETS_INTERACTION/Boite_pizza/Pizza_Box.glb"></a-asset-item>
@@ -61,12 +73,12 @@
       <a-asset-item id="tas-de-dechet" src="./model_3d/OBJETS_INTERACTION/Tas_de_dechet/Rubbish.glb"></a-asset-item>
 
 
+
     </a-assets>
     
     <!-- CAMERA -->
     <a-entity movement-controls id="cam" position="0 0 0">
       <a-entity camera look-controls position="0 1.6 0">
-        <a-text id="score_air" value="0 / ??" font="Kanit" position="-0.11547 0.15362 -1.81474" side="double"></a-text>
       </a-entity>
     </a-entity>
 
@@ -76,6 +88,19 @@
 
     <!-- SCORE -->
 
+    <a-entity position="30.5 0 -26.5">
+      <a-entity id="score1" class="score_air" rotation="18.548935659565274 0 0" scale="10 10 10" position="0 22.03488 -55.24763" text="value: DÉCHETS:0/6; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10" material="color: #000000; blending: normal" >
+      </a-entity>
+
+      <a-entity id="score2" class="score_air" rotation="18.548935659565274 -90 0" scale="10 10 10" position="43.11982 22.035 -2.43869" text="value: DÉCHETS:0/6; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10" material="color: #000000; blending: normal" ></a-entity>
+
+      <a-entity id="score3" class="score_air" rotation="18.548935659565274 180 0" scale="10 10 10" position="4.71118 22.035 58.3797" text="value: DÉCHETS:0/6; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10" material="color: #000000; blending: normal" >
+      </a-entity>
+
+      <a-entity id="score4" class="score_air" rotation="18.548935659565274 90 0" scale="10 10 10" position="-45.6279 22.03488 1.05082" text="value: DÉCHETS:0/6; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10" material="color: #000000; blending: normal" >
+      </a-entity>
+        
+    </a-entity>
 
     <!-- OBJECTS -->
     <a-entity>
@@ -1080,7 +1105,7 @@
           <a-entity gltf-model="#barriere_construction" id="travaux_barriere5" position="-9.78904 0 0"
             rotation="0 180 0">
           </a-entity>
-          <a-entity gltf-model="#barriere_construction" id="travaux_barriere6" position="-2.49167 0 0"
+          <a-entity gltf-model="#barriere_construction" id="travaux_barriere6" position="-2.492 0 0"
             rotation="0 180 0">
           </a-entity>
         </a-entity>
@@ -1187,14 +1212,85 @@
       <a-entity gltf-model="#abribus" id="abribus1" rotation="0 -90 0" position="6.99117 2.15261 4.81241"
         scale="0.12 0.12 0.12"></a-entity>
 
+        <!-- Parc -->
+      <a-entity id="parc">
+        <a-entity gltf-model="#playground1" id="playground_1" position="18.28 0.043 -1.429" rotation="0 -33.791 0"
+        scale="0.8 0.8 0.8">
+        </a-entity>
+        <a-entity gltf-model="#playground2" id="playground_2" position="18.72449 2.75751 -47.35341" rotation="0 0.48414933688554557 0"
+        scale="2.5 2.5 2.5">
+        </a-entity>
+        <a-entity gltf-model="#playground3" id="playground_3_1" position="27.39815 -0.26183 1.61302" rotation="0 -90 0"
+        scale="0.5 0.5 0.5">
+        </a-entity>
+        <a-entity gltf-model="#playground3" id="playground_3_2" position="32.00838 -0.0686 1.61302" rotation="0 -90 0"
+        scale="0.5 0.5 0.5">
+        </a-entity>
+        <a-entity gltf-model="#playground3" id="playground_3_3" position="36.5248 -0.04708 1.61302" rotation="0 -90 0"
+        scale="0.5 0.5 0.5">
+        </a-entity>
+        <a-entity gltf-model="#playground4" id="playground_4_1" position="40.62456 0.01386 -47.96425" rotation="0 -90 0"
+        scale="1 1 1">
+        </a-entity>
+        <a-entity gltf-model="#playground4" id="playground_4_2" position="40.47123 -0.06869 -40.94007" rotation="0 -90 0"
+        scale="1 1 1">
+        </a-entity>
+        <a-entity gltf-model="#playground5" id="playground_5_1" position="43.69305 0.059 -9.38123" rotation="0 0 0"
+        scale="0.03 0.03 0.03">
+        </a-entity>
+        <a-entity gltf-model="#playground5" id="playground_5_2" position="43.69305 0.05904 0.08765" rotation="0 0 0"
+        scale="0.03 0.03 0.03">
+        </a-entity>
+        <a-entity gltf-model="#bench_parc" id="bench_1" scale="2.5 2.5 3" position="13.98328 0.6 -23.31612" rotation="0 -180 0"></a-entity>
+        <a-entity gltf-model="#bench_parc" id="bench_3" scale="2.5 2.5 3" position="13.98328 0.6 -29.16922" rotation="0 -180 0"></a-entity>
+        <a-entity gltf-model="#bench_parc" id="bench_5" scale="2.5 2.5 3" position="13.98328 0.6 -17.64546" rotation="0 -180 0"></a-entity>
+
+        <a-entity gltf-model="#bench_parc" id="bench_2" scale="2.5 2.5 3" position="45.58213 0.6 -22.9997" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#bench_parc" id="bench_4" scale="2.5 2.5 3" position="45.58213 0.6 -28.70461" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#bench_parc" id="bench_6" scale="2.5 2.5 3" position="45.58213 0.6 -17.82346" rotation="0 0 0"></a-entity>
+
+
+        <a-entity gltf-model="#benchtable_parc" id="benchtable_1" scale="1.5 1.5 2.5" position="31.56958 0.85 -28.66539" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#benchtable_parc" id="benchtable_2" scale="1.5 1.5 2.5" position="31.26504 0.85 -19.46989" rotation="0 0 0"></a-entity>
+
+        <a-entity gltf-model="#tree_parc1" id="tree1_1" position="14.00795 0.58811 -20.63948" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#tree_parc1" id="tree1_2" position="32.28642 0.11773 -8.34891" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#tree_parc1" id="tree1_3" position="45.5009 0.56107 -25.49021" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#tree_parc1" id="tree1_4" position="22.59407 0.63909 -10.66241" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#tree_parc1" id="tree1_5" position="39.23981 0.53943 -50.7576" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#tree_parc1" id="tree1_6" position="23.02194 0.6 -31.09066" rotation="0 0 0"></a-entity>
+
+        
+        <a-entity gltf-model="#tree_parc2" id="tree2_1" scale="5 5 5" position="31.31897 6 -23.42124" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#tree_parc2" id="tree2_2" scale="5 5 5" position="43.40776 6 -4.68016" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#tree_parc2" id="tree2_3" scale="5 5 5" position="14.30643 6 -9.70325" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#tree_parc2" id="tree2_4" scale="5 5 5" position="14.80318 6 -44.6706" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#tree_parc2" id="tree2_5" scale="5 5 5" position="27.65161 6 -41.06649" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#tree_parc2" id="tree2_6" scale="5 5 5" position="39.8831 6 -36.19082" rotation="0 0 0"></a-entity>
+
+
+
+        <a-entity gltf-model="#bush1_parc" id="bush1" position="21.00203 0 -19.19523" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#bush1_parc" id="bush2" position="39.52258 0 -18.35213" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#bush1_parc" id="bush3" position="33.64086 0 -53.19378" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#bush1_parc" id="bush4" position="14.92717 0 -33.9318" rotation="0 0 0"></a-entity>
+
+        <a-entity gltf-model="#bush2_parc" id="tree5" scale="0.5 0.5 0.5" position="13.41134 0 3.58073" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#bush2_parc" id="tree6" scale="0.5 0.5 0.5" position="46.67743 -0.14225 3.97681" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#bush2_parc" id="tree7" scale="0.5 0.5 0.5" position="12.78042 0 -55.08664" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#bush2_parc" id="tree8" scale="0.5 0.5 0.5" position="46.77897 0 -54.05328" rotation="0 0 0"></a-entity>
+
+    </a-entity>
+
+
     </a-entity>
 
     <!-- SCORE ET COMPTEUR -->
     <section class="text">
 
-      <h3 class="score">SCORE : <span id="score">0</span></h3>
+      <!-- <h3 class="score">SCORE : <span id="score">0</span></h3> -->
 
-      <h3 class="compteur">DÉCHETS COLLECTÉS : <span id="counter">0</span> / ??</h3>
+      <h3 class="compteur">DÉCHETS COLLECTÉS : <span id="counter">0</span> / 6</h3>
 
     </section>
 
@@ -1232,79 +1328,119 @@
       // INTERACTIONS
       
       let count = 0;
+
+      let nombreDechetsTotal = 6;
       // Canettes
       document.querySelector('#canette1').addEventListener('click', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 5;
-        var canette = document.querySelector('#canette1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 5;
+        // var canette = document.querySelector('#canette1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
 
       });
       document.querySelector('#canette1').addEventListener('triggerdown', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 5;
-        var canette = document.querySelector('#canette1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 5;
+        // var canette = document.querySelector('#canette1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
       });
 
       // Bouteilles
+
       document.querySelector('#bouteille1').addEventListener('click', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 5;
-        var canette = document.querySelector('#bouteille1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 5;
+        // var canette = document.querySelector('#bouteille1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
 
         count++;
         document.querySelector('#counter').textContent = count;
+
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
       });
+
       document.querySelector('#bouteille1').addEventListener('triggerdown', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 5;
-        var canette = document.querySelector('#bouteille1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 5;
+        // var canette = document.querySelector('#bouteille1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
 
         count++;
         document.querySelector('#counter').textContent = count;
+
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
       });
 
       // Boites de pizza
       document.querySelector('#boite_pizza1').addEventListener('click', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 7;
-        var canette = document.querySelector('#boite_pizza1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 7;
+        // var canette = document.querySelector('#boite_pizza1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
 
         count++;
         document.querySelector('#counter').textContent = count;
+
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
 
       });
       document.querySelector('#boite_pizza1').addEventListener('triggerdown', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 7;
-        var canette = document.querySelector('#boite_pizza1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 7;
+        // var canette = document.querySelector('#boite_pizza1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
 
         count++;
         document.querySelector('#counter').textContent = count;
+
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
       });
 
       // Sacs poubelle noir
       document.querySelector('#sac-poubelle_noir1').addEventListener('click', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 10;
-        var canette = document.querySelector('#sac-poubelle_noir1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 10;
+        // var canette = document.querySelector('#sac-poubelle_noir1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
@@ -1312,24 +1448,33 @@
         count++;
         document.querySelector('#counter').textContent = count;
 
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
       });
       document.querySelector('#sac-poubelle_noir1').addEventListener('triggerdown', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 10;
-        var canette = document.querySelector('#sac-poubelle_noir1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 10;
+        // var canette = document.querySelector('#sac-poubelle_noir1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
 
         count++;
         document.querySelector('#counter').textContent = count;
+
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
       });
 
       // Sacs poubelle gris
       document.querySelector('#sac-poubelle_gris1').addEventListener('click', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 10;
-        var canette = document.querySelector('#sac-poubelle_gris1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 10;
+        // var canette = document.querySelector('#sac-poubelle_gris1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
@@ -1337,24 +1482,33 @@
         count++;
         document.querySelector('#counter').textContent = count;
 
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
       });
       document.querySelector('#sac-poubelle_gris1').addEventListener('triggerdown', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 10;
-        var canette = document.querySelector('#sac-poubelle_gris1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 10;
+        // var canette = document.querySelector('#sac-poubelle_gris1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
 
         count++;
         document.querySelector('#counter').textContent = count;
+
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
       });
 
       // Tas de déchets
       document.querySelector('#tas-de-dechet1').addEventListener('click', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 15;
-        var canette = document.querySelector('#tas-de-dechet1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 15;
+        // var canette = document.querySelector('#tas-de-dechet1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
@@ -1362,17 +1516,26 @@
         count++;
         document.querySelector('#counter').textContent = count;
 
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
       });
       document.querySelector('#tas-de-dechet1').addEventListener('triggerdown', function () {
-        var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 15;
-        var canette = document.querySelector('#tas-de-dechet1');
+        // var score = document.querySelector('#score');
+        // score.innerHTML = parseInt(score.innerHTML) + 15;
+        // var canette = document.querySelector('#tas-de-dechet1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
 
         count++;
         document.querySelector('#counter').textContent = count;
+
+        var score_air = document.querySelectorAll('.score_air');
+        score_air.forEach(function (element) {
+          element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
+        });
       });
 
 

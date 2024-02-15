@@ -4,11 +4,13 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    color: white;
+    color: black;
     z-index: 50;
     user-select: none;
     padding: 2rem 2rem;
     font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .score{
