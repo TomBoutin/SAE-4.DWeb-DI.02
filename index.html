@@ -5,6 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GAME VR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
@@ -13,15 +18,16 @@
     src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
   <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
   <script
-  src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
-</head>
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
 
 <body>
 
 
-  
-  
-  
+
+
+
   <a-scene cursor="rayOrigin: mouse" inspector-plugin-recast physics="debug: true"
     inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
     <!-- ASSETS -->
@@ -43,32 +49,33 @@
       <a-asset-item id="lampadaire" src="./model_3d/lampadaire/Street Light.glb"></a-asset-item>
       <a-asset-item id="box" src="./model_3d/box/Cardboard Boxes.glb"></a-asset-item>
       <a-asset-item id="poubelle" src="./model_3d/poubelle/Trashcan.glb"></a-asset-item>
+      <a-asset-item id="abribus" src="./model_3d/Abribus/Bus Stop.glb"></a-asset-item>
 
       <a-asset-item id="canette" src="./model_3d/OBJETS_INTERACTION/Canette/Crushed Soda Can.glb"></a-asset-item>
+      <a-asset-item id="bouteille" src="./model_3d/OBJETS_INTERACTION/Bouteille/Bottle_Plastic.glb"></a-asset-item>
+      <a-asset-item id="boite_pizza" src="./model_3d/OBJETS_INTERACTION/Boite_pizza/Pizza_Box.glb"></a-asset-item>
+      <a-asset-item id="sac-poubelle_noir"
+        src="./model_3d/OBJETS_INTERACTION/Sac_poubelle_noir/trash_bag_black.glb"></a-asset-item>
+      <a-asset-item id="sac-poubelle_gris"
+        src="./model_3d/OBJETS_INTERACTION/Sac_poubelle_gris/trah_bag_grey.glb"></a-asset-item>
+      <a-asset-item id="tas-de-dechet" src="./model_3d/OBJETS_INTERACTION/Tas_de_dechet/Rubbish.glb"></a-asset-item>
 
 
     </a-assets>
-    <!-- SCORE -->
-
-
-
-
-
-
+    
     <!-- CAMERA -->
     <a-entity movement-controls id="cam" position="0 0 0">
-      <a-entity camera look-controls position="0 1.6 0"></a-entity>
+      <a-entity camera look-controls position="0 1.6 0">
+        <a-text id="score_air" value="0 / ??" font="Kanit" position="-0.11547 0.15362 -1.81474" side="double"></a-text>
+      </a-entity>
     </a-entity>
-
-    <!-- NAV -->
 
     <!-- SKY -->
 
     <a-entity gltf-model="#ciel" rotation="0 150 0" position="0 100 0"></a-entity>
 
-    <!-- <a-sky src="#sky" ></a-sky> -->
+    <!-- SCORE -->
 
-    <!-- GROUND -->
 
     <!-- OBJECTS -->
     <a-entity>
@@ -424,7 +431,7 @@
 
       <!-- Arbres -->
       <a-entity position="7 0 0" id="arbres1">
-        
+
         <a-entity position="0 0 -50">
           <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 196 0">
           </a-entity>
@@ -665,7 +672,7 @@
       </a-entity>
 
       <a-entity position="51.98803 0 0" id="arbres4">
-        
+
         <a-entity position="0 0 -50">
           <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 196 0">
           </a-entity>
@@ -1065,8 +1072,7 @@
           <a-entity gltf-model="#barriere_construction" id="travaux_barriere2" position="4.75561 0 0"
             rotation="0 180 0">
           </a-entity>
-          <a-entity gltf-model="#barriere_construction" id="travaux_barriere3" position="1.161 0 0"
-            rotation="0 180 0">
+          <a-entity gltf-model="#barriere_construction" id="travaux_barriere3" position="1.161 0 0" rotation="0 180 0">
           </a-entity>
           <a-entity gltf-model="#barriere_construction" id="travaux_barriere4" position="-6.16525 0 0"
             rotation="0 180 0">
@@ -1151,21 +1157,26 @@
           color="#5C5C5C">
         </a-plane>
 
-        <a-entity gltf-model="#poubelle-grosse" id="ruelle_poubelle1" rotation="0 90 0" position="4.31022 0.56237 4.56297" scale="1.8 1.8 1.8">
+        <a-entity gltf-model="#poubelle-grosse" id="ruelle_poubelle1" rotation="0 90 0"
+          position="4.31022 0.56237 4.56297" scale="1.8 1.8 1.8">
         </a-entity>
-        <a-entity gltf-model="#poubelle-grosse" id="ruelle_poubelle2" rotation="0 -90 0" position="4.48911 0.56237 -4.42928" scale="1.8 1.8 1.8">
+        <a-entity gltf-model="#poubelle-grosse" id="ruelle_poubelle2" rotation="0 -90 0"
+          position="4.48911 0.56237 -4.42928" scale="1.8 1.8 1.8">
         </a-entity>
-        <a-entity gltf-model="#poubelle-grosse" id="ruelle_poubelle3" rotation="0 -90 0" position="6.16881 0.56237 -4.42928" scale="1.8 1.8 1.8">
+        <a-entity gltf-model="#poubelle-grosse" id="ruelle_poubelle3" rotation="0 -90 0"
+          position="6.16881 0.56237 -4.42928" scale="1.8 1.8 1.8">
         </a-entity>
-        <a-entity gltf-model="#poubelle" id="ruelle_poubelle4" rotation="0 -37.51 0" position="2.82481 0 -4.361" scale="0.02 0.02 0.02">
+        <a-entity gltf-model="#poubelle" id="ruelle_poubelle4" rotation="0 -37.51 0" position="2.82481 0 -4.361"
+          scale="0.02 0.02 0.02">
         </a-entity>
-        
+
         <a-entity gltf-model="#lampadaire" id="ruelle_lampadaire" position="7.53519 0 -4.63541">
         </a-entity>
 
         <a-entity gltf-model="#box" id="ruelle_box1" rotation="0 -23.01 0" position="2.59833 0 4.42469">
         </a-entity>
-        <a-entity gltf-model="#box" id="ruelle_box2" rotation="0 12.15 0" scale="1.2 1.2 1.2" position="1.06449 0 4.42205">
+        <a-entity gltf-model="#box" id="ruelle_box2" rotation="0 12.15 0" scale="1.2 1.2 1.2"
+          position="1.06449 0 4.42205">
         </a-entity>
         <a-entity gltf-model="#box" id="ruelle_box3" rotation="0 -37.66 0" position="1.72778 0 3.38549">
         </a-entity>
@@ -1173,41 +1184,200 @@
 
       </a-entity>
 
+      <a-entity gltf-model="#abribus" id="abribus1" rotation="0 -90 0" position="6.99117 2.15261 4.81241"
+        scale="0.12 0.12 0.12"></a-entity>
+
     </a-entity>
 
-    <!-- LIGHTS -->
+    <!-- SCORE ET COMPTEUR -->
+    <section class="text">
 
-    <!-- CONTROLLERS -->
+      <h3 class="score">SCORE : <span id="score">0</span></h3>
+
+      <h3 class="compteur">DÉCHETS COLLECTÉS : <span id="counter">0</span> / ??</h3>
+
+    </section>
+
+    <!-- OBJETS INTERACTIFS -->
+
+    <!-- canettes -->
+    <a-entity gltf-model="#canette" id="canette1" position="-20.57778 0.03957 -53.53054" scale="2 2 2"
+      class="collectible"></a-entity>
+
+    <!-- Bouteilles -->
+    <a-entity gltf-model="#bouteille" id="bouteille1" scale="0.1 0.1 0.1" position="7.46496 0.40085 2.49558"
+      class="collectible"></a-entity>
+
+    <!-- Boite de pizza -->
+    <a-entity gltf-model="#boite_pizza" id="boite_pizza1" rotation="0 120 0" position="-8.18803 -0.00836 26.40926"
+      class="collectible"></a-entity>
+
+    <!-- Sac poubelle noir -->
+    <a-entity gltf-model="#sac-poubelle_noir" id="sac-poubelle_noir1"
+      rotation="20.069565647842474 38.03694914534996 1.040491355957575" position="50.56496 0.50342 8.20747"
+      scale="3 3 3" class="collectible"></a-entity>
+
+    <!-- Sac poubelle gris -->
+    <a-entity gltf-model="#sac-poubelle_gris" id="sac-poubelle_gris1"
+      rotation="17.17670174022695 3.5254093134399556 11.784022972455642" position="20.18225 0.60845 9.15884"
+      scale="3 3 3" class="collectible"></a-entity>
+
+    <!-- Tas de déchets -->
+    <a-entity gltf-model="#tas-de-dechet" id="tas-de-dechet1" rotation="0 153 0" position="-7.65838 0 -34.63371"
+      scale="0.02 0.02 0.02" class="collectible"></a-entity>
 
     <!-- SCRIPTS -->
-
-    <a-entity gltf-model="#canette" id="canette1" scale="1.3 1.3 1.3"></a-entity>
-
-    <h3 style="z-index: 50; color: black; position: absolute; top: 5px; left: 5px; user-select: none;">SCORE : <span id="score">0</span></h3>
-
     <script>
-
+      
+      // INTERACTIONS
+      
+      let count = 0;
+      // Canettes
       document.querySelector('#canette1').addEventListener('click', function () {
         var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 1;
+        score.innerHTML = parseInt(score.innerHTML) + 5;
         var canette = document.querySelector('#canette1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
 
-       });
-       document.querySelector('#canette1').addEventListener('triggerdown', function () {
+      });
+      document.querySelector('#canette1').addEventListener('triggerdown', function () {
         var score = document.querySelector('#score');
-        score.innerHTML = parseInt(score.innerHTML) + 1;
+        score.innerHTML = parseInt(score.innerHTML) + 5;
         var canette = document.querySelector('#canette1');
 
         canette.setAttribute('visible', 'false');
         canette.setAttribute('position', '0 -5 0');
-       });
+      });
+
+      // Bouteilles
+      document.querySelector('#bouteille1').addEventListener('click', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 5;
+        var canette = document.querySelector('#bouteille1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+      });
+      document.querySelector('#bouteille1').addEventListener('triggerdown', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 5;
+        var canette = document.querySelector('#bouteille1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+      });
+
+      // Boites de pizza
+      document.querySelector('#boite_pizza1').addEventListener('click', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 7;
+        var canette = document.querySelector('#boite_pizza1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+
+      });
+      document.querySelector('#boite_pizza1').addEventListener('triggerdown', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 7;
+        var canette = document.querySelector('#boite_pizza1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+      });
+
+      // Sacs poubelle noir
+      document.querySelector('#sac-poubelle_noir1').addEventListener('click', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 10;
+        var canette = document.querySelector('#sac-poubelle_noir1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+
+      });
+      document.querySelector('#sac-poubelle_noir1').addEventListener('triggerdown', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 10;
+        var canette = document.querySelector('#sac-poubelle_noir1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+      });
+
+      // Sacs poubelle gris
+      document.querySelector('#sac-poubelle_gris1').addEventListener('click', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 10;
+        var canette = document.querySelector('#sac-poubelle_gris1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+
+      });
+      document.querySelector('#sac-poubelle_gris1').addEventListener('triggerdown', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 10;
+        var canette = document.querySelector('#sac-poubelle_gris1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+      });
+
+      // Tas de déchets
+      document.querySelector('#tas-de-dechet1').addEventListener('click', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 15;
+        var canette = document.querySelector('#tas-de-dechet1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+
+      });
+      document.querySelector('#tas-de-dechet1').addEventListener('triggerdown', function () {
+        var score = document.querySelector('#score');
+        score.innerHTML = parseInt(score.innerHTML) + 15;
+        var canette = document.querySelector('#tas-de-dechet1');
+
+        canette.setAttribute('visible', 'false');
+        canette.setAttribute('position', '0 -5 0');
+
+        count++;
+        document.querySelector('#counter').textContent = count;
+      });
 
 
 
-</script>
+    </script>
   </a-scene>
 </body>
 
