@@ -75,10 +75,15 @@
 
 
     </a-assets>
+
+    <!-- SOUND -->
     
+    <a-sound src="src: url(./Son/Birds Chirping in Park Sound Effect.mp3)" id="son-oiseau" position="29.85146 0 -26.29609" volume="0.3" autoplay="true"></a-sound>
+
     <!-- CAMERA -->
     <a-entity movement-controls id="cam" position="0 0 0">
       <a-entity camera look-controls position="0 1.6 0">
+        <a-sound src="src: url(./Son/afterthought.mp3)" autoplay="true" position="0 0 0" volume=".1" loop="true"></a-sound>
       </a-entity>
     </a-entity>
 
@@ -1298,29 +1303,47 @@
 
     <!-- canettes -->
     <a-entity gltf-model="#canette" id="canette1" position="-20.57778 0.03957 -53.53054" scale="2 2 2"
-      class="collectible"></a-entity>
+      class="collectible">
+    </a-entity>
+    <a-sound id="son-canette1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6" position="-20.57778 0.03957 -53.53054">
+    </a-sound>
 
     <!-- Bouteilles -->
     <a-entity gltf-model="#bouteille" id="bouteille1" scale="0.1 0.1 0.1" position="7.46496 0.40085 2.49558"
-      class="collectible"></a-entity>
+      class="collectible">
+    </a-entity>
+    <a-sound id="son-bouteille1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6" position="7.46496 0.40085 2.49558">
+    </a-sound>
 
     <!-- Boite de pizza -->
     <a-entity gltf-model="#boite_pizza" id="boite_pizza1" rotation="0 120 0" position="-8.18803 -0.00836 26.40926"
-      class="collectible"></a-entity>
+      class="collectible">
+    </a-entity>
+    <a-sound id="son-boite_pizza1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6" position="-8.18803 -0.00836 26.40926">
+    </a-sound>
 
     <!-- Sac poubelle noir -->
     <a-entity gltf-model="#sac-poubelle_noir" id="sac-poubelle_noir1"
       rotation="20.069565647842474 38.03694914534996 1.040491355957575" position="50.56496 0.50342 8.20747"
-      scale="3 3 3" class="collectible"></a-entity>
+      scale="3 3 3" class="collectible">
+    </a-entity>
+    <a-sound id="son-sac-poubelle_noir1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6" position="50.56496 0.50342 8.20747">
+    </a-sound>
 
     <!-- Sac poubelle gris -->
     <a-entity gltf-model="#sac-poubelle_gris" id="sac-poubelle_gris1"
       rotation="17.17670174022695 3.5254093134399556 11.784022972455642" position="20.18225 0.60845 9.15884"
-      scale="3 3 3" class="collectible"></a-entity>
+      scale="3 3 3" class="collectible">
+    </a-entity>
+    <a-sound id="son-sac-poubelle_gris1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6" position="20.18225 0.60845 9.15884">
+    </a-sound>
 
     <!-- Tas de déchets -->
     <a-entity gltf-model="#tas-de-dechet" id="tas-de-dechet1" rotation="0 153 0" position="-7.65838 0 -34.63371"
-      scale="0.02 0.02 0.02" class="collectible"></a-entity>
+      scale="0.02 0.02 0.02" class="collectible">
+    </a-entity>
+    <a-sound id="son-tas-de-dechet1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6" position="-7.65838 0 -34.63371">
+    </a-sound>
 
     <!-- SCRIPTS -->
     <script>
@@ -1334,35 +1357,42 @@
       document.querySelector('#canette1').addEventListener('click', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 5;
-        // var canette = document.querySelector('#canette1');
+        var son = document.querySelector('#son-canette1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#canette1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
-
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
       });
       document.querySelector('#canette1').addEventListener('triggerdown', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 5;
-        // var canette = document.querySelector('#canette1');
+        var son = document.querySelector('#son-canette1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#canette1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
       });
 
       // Bouteilles
@@ -1370,172 +1400,215 @@
       document.querySelector('#bouteille1').addEventListener('click', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 5;
-        // var canette = document.querySelector('#bouteille1');
+        var son = document.querySelector('#son-bouteille1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#bouteille1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
+
       });
 
       document.querySelector('#bouteille1').addEventListener('triggerdown', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 5;
-        // var canette = document.querySelector('#bouteille1');
+        var son = document.querySelector('#son-bouteille1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#bouteille1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
       });
 
       // Boites de pizza
       document.querySelector('#boite_pizza1').addEventListener('click', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 7;
-        // var canette = document.querySelector('#boite_pizza1');
+        var son = document.querySelector('#son-boite_pizza1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#boite_pizza1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
 
       });
       document.querySelector('#boite_pizza1').addEventListener('triggerdown', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 7;
-        // var canette = document.querySelector('#boite_pizza1');
+        var son = document.querySelector('#son-boite_pizza1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#boite_pizza1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2}); 
+        
+
       });
 
       // Sacs poubelle noir
       document.querySelector('#sac-poubelle_noir1').addEventListener('click', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 10;
-        // var canette = document.querySelector('#sac-poubelle_noir1');
+        var son = document.querySelector('#son-sac-poubelle_noir1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#sac-poubelle_noir1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
       });
       document.querySelector('#sac-poubelle_noir1').addEventListener('triggerdown', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 10;
-        // var canette = document.querySelector('#sac-poubelle_noir1');
+        var son = document.querySelector('#son-sac-poubelle_noir1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#sac-poubelle_noir1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
       });
 
       // Sacs poubelle gris
       document.querySelector('#sac-poubelle_gris1').addEventListener('click', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 10;
-        // var canette = document.querySelector('#sac-poubelle_gris1');
+        var son = document.querySelector('#son-sac-poubelle_gris1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#sac-poubelle_gris1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
       });
       document.querySelector('#sac-poubelle_gris1').addEventListener('triggerdown', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 10;
-        // var canette = document.querySelector('#sac-poubelle_gris1');
+        var son = document.querySelector('#son-sac-poubelle_gris1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#sac-poubelle_gris1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
       });
 
       // Tas de déchets
       document.querySelector('#tas-de-dechet1').addEventListener('click', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 15;
-        // var canette = document.querySelector('#tas-de-dechet1');
+        var son = document.querySelector('#son-tas-de-dechet1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#tas-de-dechet1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
       });
       document.querySelector('#tas-de-dechet1').addEventListener('triggerdown', function () {
         // var score = document.querySelector('#score');
         // score.innerHTML = parseInt(score.innerHTML) + 15;
-        // var canette = document.querySelector('#tas-de-dechet1');
+        var son = document.querySelector('#son-tas-de-dechet1');
+        son.components.sound.playSound();
+        
+        var objet = document.querySelector('#tas-de-dechet1');
 
-        canette.setAttribute('visible', 'false');
-        canette.setAttribute('position', '0 -5 0');
-
+        
         count++;
         document.querySelector('#counter').textContent = count;
-
+        
         var score_air = document.querySelectorAll('.score_air');
         score_air.forEach(function (element) {
           element.setAttribute('text', 'value: DÉCHETS:' + count + '/' + nombreDechetsTotal + '; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10');
         });
+        
+        objet.setAttribute('visible', 'false');
+        objet.setAttribute('position', {y: -2});
       });
 
 
