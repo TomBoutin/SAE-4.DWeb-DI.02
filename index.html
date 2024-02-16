@@ -30,8 +30,8 @@
 
 
 
-  <a-scene cursor="rayOrigin: mouse" inspector-plugin-recast physics="debug: true"
-    inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+  <a-scene cursor="rayOrigin: mouse" inspector-plugin-recast physics="debug: true "
+    inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js" stats>
     <!-- ASSETS -->
     <a-assets>
       <a-asset-item id="ciel" src="./Texture/free_-_skybox_anime_sky.glb"></a-asset-item>
@@ -90,15 +90,15 @@
       <a-entity camera look-controls position="0 1.6 0">
         <a-sound src="src: url(./Son/afterthought.mp3)" autoplay="true" position="0 0 0" volume=".1"
           loop="true"></a-sound>
+        </a-entity>
       </a-entity>
-    </a-entity>
-
-    <!-- CONTROLERS -->
-
-    <a-entity id="leftController" vive-controls="hand: left"></a-entity>
-    <a-entity id="rightController" vive-controls="hand: right">
-      <a-entity raycaster="showLine:true;objects: .clickable" cursor></a-entity>
-    </a-entity>
+      
+      <!-- CONTROLERS -->
+      
+      <a-entity id="leftController" vive-controls="hand: left" position="0 -1.6 0"></a-entity>
+      <a-entity id="rightController" vive-controls="hand: right" position="0 -1.6 0">
+        <a-entity raycaster="showLine:true;objects: .clickable" cursor></a-entity>
+      </a-entity>
 
       <!-- SKY -->
 
@@ -1093,14 +1093,14 @@
         <a-entity gltf-model="#abribus" id="abribus1" rotation="0 -90 0" position="6.99117 2.15261 4.81241"
           scale="0.12 0.12 0.12"></a-entity>
 
-        <!-- Parc -->
+        <!-- Parc --> 
         <a-entity id="parc">
           <a-entity gltf-model="#playground1" id="playground_1" position="18.28 0.043 -1.429" rotation="0 -33.791 0"
           scale="0.8 0.8 0.8">
           </a-entity>
-          <a-entity gltf-model="#playground2" id="playground_2" position="18.72449 2.75751 -47.35341" 
+          <!-- <a-entity gltf-model="#playground2" id="playground_2" position="18.72449 2.75751 -47.35341" 
             rotation="0 0.48414933688554557 0" scale="2.5 2.5 2.5">
-          </a-entity> 
+          </a-entity>  -->
           <a-entity gltf-model="#playground3" id="playground_3_1" position="27.39815 -0.26183 1.61302"
             rotation="0 -90 0" scale="0.5 0.5 0.5">
           </a-entity>
