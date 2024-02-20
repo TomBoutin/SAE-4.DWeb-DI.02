@@ -218,11 +218,11 @@ dechets.forEach(function (dechet) {
   sound.setAttribute("position", position);
   sound.setAttribute("id", dechet.sound);
 
-
-entity.addEventListener("click", function () {
+  document.querySelector("a-scene").appendChild(sound);
   
-  var son = document.querySelector(dechet.sound);
-  son.components.sound.playSound();
+  entity.addEventListener("click", function () {
+    
+    sound.components.sound.playSound();
 
 
   updateScore();
@@ -233,7 +233,6 @@ entity.addEventListener("click", function () {
 
 })
 document.querySelector("a-scene").appendChild(entity);
-document.querySelector("a-scene").appendChild(sound);
 
 });
 
