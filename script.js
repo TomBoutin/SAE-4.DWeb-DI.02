@@ -171,6 +171,28 @@ let dechets = [
   },
 ];
 
+let count = 0;
+let nombreDechetsTotal = 10;
+
+/* Fonction pour mettre à jour le score */
+
+function updateScore() {
+  count++;
+  document.querySelector("#counter").textContent = count;
+
+  var score_air = document.querySelectorAll(".score_air");
+  score_air.forEach(function (element) {
+    element.setAttribute(
+      "text",
+      "value: DÉCHETS:" +
+        count +
+        "/" +
+        nombreDechetsTotal +
+        "; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10"
+    );
+  });
+}
+
 // Fonction pour générer des déchets avec des positions aléatoires
 dechets.forEach(function (dechet) {
   let index = Math.floor(Math.random() * objPosition.length);
@@ -195,294 +217,287 @@ dechets.forEach(function (dechet) {
   sound.setAttribute("volume", ".6");
   sound.setAttribute("position", position);
   sound.setAttribute("id", dechet.sound);
-  document.querySelector("a-scene").appendChild(entity);
-  document.querySelector("a-scene").appendChild(sound);
-});
 
-generateDechets();
 
-// INTERACTIONS
-let count = 0;
-let nombreDechetsTotal = 10;
-
-/* Fonction pour mettre à jour le score */
-
-function updateScore() {
-  count++;
-  document.querySelector("#counter").textContent = count;
-
-  var score_air = document.querySelectorAll(".score_air");
-  score_air.forEach(function (element) {
-    element.setAttribute(
-      "text",
-      "value: DÉCHETS:" +
-        count +
-        "/" +
-        nombreDechetsTotal +
-        "; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10"
-    );
-  });
-}
-
-/* ÉCOUTEUR D'ÉVÉNEMENTS */
-// Canettes
-document.querySelector("#canette1").addEventListener("click", function () {
-  // var score = document.querySelector('#score');
-  // score.innerHTML = parseInt(score.innerHTML) + 5;
-  var son = document.querySelector("#son-canette1");
+entity.addEventListener("click", function () {
+  
+  var son = document.querySelector(dechet.sound);
   son.components.sound.playSound();
+
 
   updateScore();
 
-  var objet = document.querySelector("#canette1");
+  var objet = entity;
   objet.setAttribute("visible", "false");
   objet.setAttribute("position", { y: -2 });
+
+})
+document.querySelector("a-scene").appendChild(entity);
+document.querySelector("a-scene").appendChild(sound);
+
 });
 
-document.querySelector("#canette2").addEventListener("click", function () {
-  // var score = document.querySelector('#score');
-  // score.innerHTML = parseInt(score.innerHTML) + 5;
-  var son = document.querySelector("#son-canette2");
-  son.components.sound.playSound();
+// generateDechets();
 
-  var objet = document.querySelector("#canette2");
 
-  updateScore();
+// // Canettes
+// document.querySelector("#canette1").addEventListener("click", function () {
+//   // var score = document.querySelector('#score');
+//   // score.innerHTML = parseInt(score.innerHTML) + 5;
+//   var son = document.querySelector("#son-canette1");
+//   son.components.sound.playSound();
 
-  objet.setAttribute("visible", "false");
-  objet.setAttribute("position", { y: -2 });
-});
+//   updateScore();
 
-document.querySelector("#canette3").addEventListener("click", function () {
-  // var score = document.querySelector('#score');
-  // score.innerHTML = parseInt(score.innerHTML) + 5;
-  var son = document.querySelector("#son-canette3");
-  son.components.sound.playSound();
+//   var objet = document.querySelector("#canette1");
+//   objet.setAttribute("visible", "false");
+//   objet.setAttribute("position", { y: -2 });
+// });
 
-  var objet = document.querySelector("#canette3");
+// document.querySelector("#canette2").addEventListener("click", function () {
+//   // var score = document.querySelector('#score');
+//   // score.innerHTML = parseInt(score.innerHTML) + 5;
+//   var son = document.querySelector("#son-canette2");
+//   son.components.sound.playSound();
 
-  updateScore();
+//   var objet = document.querySelector("#canette2");
 
-  objet.setAttribute("visible", "false");
-  objet.setAttribute("position", { y: -2 });
-});
+//   updateScore();
 
-// Bouteilles
+//   objet.setAttribute("visible", "false");
+//   objet.setAttribute("position", { y: -2 });
+// });
 
-document.querySelector("#bouteille1").addEventListener("click", function () {
-  // var score = document.querySelector('#score');
-  // score.innerHTML = parseInt(score.innerHTML) + 5;
-  var son = document.querySelector("#son-bouteille1");
-  son.components.sound.playSound();
+// document.querySelector("#canette3").addEventListener("click", function () {
+//   // var score = document.querySelector('#score');
+//   // score.innerHTML = parseInt(score.innerHTML) + 5;
+//   var son = document.querySelector("#son-canette3");
+//   son.components.sound.playSound();
 
-  var objet = document.querySelector("#bouteille1");
+//   var objet = document.querySelector("#canette3");
 
-  updateScore();
+//   updateScore();
 
-  objet.setAttribute("visible", "false");
-  objet.setAttribute("position", { y: -2 });
-});
+//   objet.setAttribute("visible", "false");
+//   objet.setAttribute("position", { y: -2 });
+// });
 
-document.querySelector("#bouteille2").addEventListener("click", function () {
-  // var score = document.querySelector('#score');
-  // score.innerHTML = parseInt(score.innerHTML) + 5;
-  var son = document.querySelector("#son-bouteille2");
-  son.components.sound.playSound();
+// // Bouteilles
 
-  var objet = document.querySelector("#bouteille2");
+// document.querySelector("#bouteille1").addEventListener("click", function () {
+//   // var score = document.querySelector('#score');
+//   // score.innerHTML = parseInt(score.innerHTML) + 5;
+//   var son = document.querySelector("#son-bouteille1");
+//   son.components.sound.playSound();
 
-  updateScore();
+//   var objet = document.querySelector("#bouteille1");
 
-  objet.setAttribute("visible", "false");
-  objet.setAttribute("position", { y: -2 });
-});
+//   updateScore();
 
-document.querySelector("#bouteille3").addEventListener("click", function () {
-  // var score = document.querySelector('#score');
-  // score.innerHTML = parseInt(score.innerHTML) + 5;
-  var son = document.querySelector("#son-bouteille3");
-  son.components.sound.playSound();
+//   objet.setAttribute("visible", "false");
+//   objet.setAttribute("position", { y: -2 });
+// });
 
-  var objet = document.querySelector("#bouteille3");
+// document.querySelector("#bouteille2").addEventListener("click", function () {
+//   // var score = document.querySelector('#score');
+//   // score.innerHTML = parseInt(score.innerHTML) + 5;
+//   var son = document.querySelector("#son-bouteille2");
+//   son.components.sound.playSound();
 
-  updateScore();
+//   var objet = document.querySelector("#bouteille2");
 
-  objet.setAttribute("visible", "false");
-  objet.setAttribute("position", { y: -2 });
-});
+//   updateScore();
 
-// Boite de pizza
-document.querySelector("#boite_pizza1").addEventListener("click", function () {
-  // var score = document.querySelector('#score');
-  // score.innerHTML = parseInt(score.innerHTML) + 5;
-  var son = document.querySelector("#son-boite_pizza1");
-  son.components.sound.playSound();
+//   objet.setAttribute("visible", "false");
+//   objet.setAttribute("position", { y: -2 });
+// });
 
-  var objet = document.querySelector("#boite_pizza1");
+// document.querySelector("#bouteille3").addEventListener("click", function () {
+//   // var score = document.querySelector('#score');
+//   // score.innerHTML = parseInt(score.innerHTML) + 5;
+//   var son = document.querySelector("#son-bouteille3");
+//   son.components.sound.playSound();
 
-  updateScore();
+//   var objet = document.querySelector("#bouteille3");
 
-  objet.setAttribute("visible", "false");
-  objet.setAttribute("position", { y: -2 });
-});
+//   updateScore();
 
-// Sac poubelle noir
-document
-  .querySelector("#sac-poubelle_noir1")
-  .addEventListener("click", function () {
-    // var score = document.querySelector('#score');
-    // score.innerHTML = parseInt(score.innerHTML) + 5;
-    var son = document.querySelector("#son-sac-poubelle_noir1");
-    son.components.sound.playSound();
+//   objet.setAttribute("visible", "false");
+//   objet.setAttribute("position", { y: -2 });
+// });
 
-    var objet = document.querySelector("#sac-poubelle_noir1");
+// // Boite de pizza
+// document.querySelector("#boite_pizza1").addEventListener("click", function () {
+//   // var score = document.querySelector('#score');
+//   // score.innerHTML = parseInt(score.innerHTML) + 5;
+//   var son = document.querySelector("#son-boite_pizza1");
+//   son.components.sound.playSound();
 
-    updateScore();
+//   var objet = document.querySelector("#boite_pizza1");
 
-    objet.setAttribute("visible", "false");
-    objet.setAttribute("position", { y: -2 });
-  });
+//   updateScore();
 
-document
-  .querySelector("#sac-poubelle_noir2")
-  .addEventListener("click", function () {
-    // var score = document.querySelector('#score');
-    // score.innerHTML = parseInt(score.innerHTML) + 5;
-    var son = document.querySelector("#son-sac-poubelle_noir2");
-    son.components.sound.playSound();
+//   objet.setAttribute("visible", "false");
+//   objet.setAttribute("position", { y: -2 });
+// });
 
-    var objet = document.querySelector("#sac-poubelle_noir2");
+// // Sac poubelle noir
+// document
+//   .querySelector("#sac-poubelle_noir1")
+//   .addEventListener("click", function () {
+//     // var score = document.querySelector('#score');
+//     // score.innerHTML = parseInt(score.innerHTML) + 5;
+//     var son = document.querySelector("#son-sac-poubelle_noir1");
+//     son.components.sound.playSound();
 
-    updateScore();
+//     var objet = document.querySelector("#sac-poubelle_noir1");
 
-    objet.setAttribute("visible", "false");
-    objet.setAttribute("position", { y: -2 });
-  });
+//     updateScore();
 
-// Sac poubelle gris
-document
-  .querySelector("#sac-poubelle_gris1")
-  .addEventListener("click", function () {
-    // var score = document.querySelector('#score');
-    // score.innerHTML = parseInt(score.innerHTML) + 5;
-    var son = document.querySelector("#son-sac-poubelle_gris1");
-    son.components.sound.playSound();
+//     objet.setAttribute("visible", "false");
+//     objet.setAttribute("position", { y: -2 });
+//   });
 
-    var objet = document.querySelector("#sac-poubelle_gris1");
+// document
+//   .querySelector("#sac-poubelle_noir2")
+//   .addEventListener("click", function () {
+//     // var score = document.querySelector('#score');
+//     // score.innerHTML = parseInt(score.innerHTML) + 5;
+//     var son = document.querySelector("#son-sac-poubelle_noir2");
+//     son.components.sound.playSound();
 
-    updateScore();
+//     var objet = document.querySelector("#sac-poubelle_noir2");
 
-    objet.setAttribute("visible", "false");
-    objet.setAttribute("position", { y: -2 });
-  });
+//     updateScore();
 
-/* ÉCOUTEURS D'ÉVÉNEMENTS POUR LES MANETTES VR */
+//     objet.setAttribute("visible", "false");
+//     objet.setAttribute("position", { y: -2 });
+//   });
 
-document
-  .querySelector("#rightController")
-  .addEventListener("triggerdown", function () {
-    var intersectedElement =
-      document.querySelector("[raycaster]").components.raycaster
-        .intersectedEls[0];
+// // Sac poubelle gris
+// document
+//   .querySelector("#sac-poubelle_gris1")
+//   .addEventListener("click", function () {
+//     // var score = document.querySelector('#score');
+//     // score.innerHTML = parseInt(score.innerHTML) + 5;
+//     var son = document.querySelector("#son-sac-poubelle_gris1");
+//     son.components.sound.playSound();
 
-    if (intersectedElement && intersectedElement.id === "canette1") {
-      var son = document.querySelector("#son-canette1");
-      son.components.sound.playSound();
+//     var objet = document.querySelector("#sac-poubelle_gris1");
 
-      var objet = document.querySelector("#canette1");
-      updateScore();
+//     updateScore();
 
-      objet.setAttribute("visible", "false");
-      objet.setAttribute("position", { y: -2 });
-    } else if (intersectedElement && intersectedElement.id === "canette2") {
-      var son = document.querySelector("#son-canette2");
-      son.components.sound.playSound();
+//     objet.setAttribute("visible", "false");
+//     objet.setAttribute("position", { y: -2 });
+//   });
 
-      var objet = document.querySelector("#canette2");
-      updateScore();
+// /* ÉCOUTEURS D'ÉVÉNEMENTS POUR LES MANETTES VR */
 
-      objet.setAttribute("visible", "false");
-      objet.setAttribute("position", { y: -2 });
-    } else if (intersectedElement && intersectedElement.id === "canette3") {
-      var son = document.querySelector("#son-canette3");
-      son.components.sound.playSound();
+// document
+//   .querySelector("#rightController")
+//   .addEventListener("triggerdown", function () {
+//     var intersectedElement =
+//       document.querySelector("[raycaster]").components.raycaster
+//         .intersectedEls[0];
 
-      var objet = document.querySelector("#canette3");
-      updateScore();
+//     if (intersectedElement && intersectedElement.id === "canette1") {
+//       var son = document.querySelector("#son-canette1");
+//       son.components.sound.playSound();
 
-      objet.setAttribute("visible", "false");
-      objet.setAttribute("position", { y: -2 });
-    } else if (intersectedElement && intersectedElement.id === "bouteille1") {
-      var son = document.querySelector("#son-bouteille1");
-      son.components.sound.playSound();
+//       var objet = document.querySelector("#canette1");
+//       updateScore();
 
-      var objet = document.querySelector("#bouteille1");
-      updateScore();
+//       objet.setAttribute("visible", "false");
+//       objet.setAttribute("position", { y: -2 });
+//     } else if (intersectedElement && intersectedElement.id === "canette2") {
+//       var son = document.querySelector("#son-canette2");
+//       son.components.sound.playSound();
 
-      objet.setAttribute("visible", "false");
-      objet.setAttribute("position", { y: -2 });
-    } else if (intersectedElement && intersectedElement.id === "bouteille2") {
-      var son = document.querySelector("#son-bouteille2");
-      son.components.sound.playSound();
+//       var objet = document.querySelector("#canette2");
+//       updateScore();
 
-      var objet = document.querySelector("#bouteille2");
-      updateScore();
+//       objet.setAttribute("visible", "false");
+//       objet.setAttribute("position", { y: -2 });
+//     } else if (intersectedElement && intersectedElement.id === "canette3") {
+//       var son = document.querySelector("#son-canette3");
+//       son.components.sound.playSound();
 
-      objet.setAttribute("visible", "false");
-      objet.setAttribute("position", { y: -2 });
-    } else if (intersectedElement && intersectedElement.id === "bouteille3") {
-      var son = document.querySelector("#son-bouteille3");
-      son.components.sound.playSound();
+//       var objet = document.querySelector("#canette3");
+//       updateScore();
 
-      var objet = document.querySelector("#bouteille3");
-      updateScore();
+//       objet.setAttribute("visible", "false");
+//       objet.setAttribute("position", { y: -2 });
+//     } else if (intersectedElement && intersectedElement.id === "bouteille1") {
+//       var son = document.querySelector("#son-bouteille1");
+//       son.components.sound.playSound();
 
-      objet.setAttribute("visible", "false");
-      objet.setAttribute("position", { y: -2 });
-    } else if (intersectedElement && intersectedElement.id === "boite_pizza1") {
-      var son = document.querySelector("#son-boite_pizza1");
-      son.components.sound.playSound();
+//       var objet = document.querySelector("#bouteille1");
+//       updateScore();
 
-      var objet = document.querySelector("#boite_pizza1");
-      updateScore();
+//       objet.setAttribute("visible", "false");
+//       objet.setAttribute("position", { y: -2 });
+//     } else if (intersectedElement && intersectedElement.id === "bouteille2") {
+//       var son = document.querySelector("#son-bouteille2");
+//       son.components.sound.playSound();
 
-      objet.setAttribute("visible", "false");
-      objet.setAttribute("position", { y: -2 });
-    } else if (
-      intersectedElement &&
-      intersectedElement.id === "sac-poubelle_noir1"
-    ) {
-      var son = document.querySelector("#son-sac-poubelle_noir1");
-      son.components.sound.playSound();
+//       var objet = document.querySelector("#bouteille2");
+//       updateScore();
 
-      var objet = document.querySelector("#sac-poubelle_noir1");
-      updateScore();
+//       objet.setAttribute("visible", "false");
+//       objet.setAttribute("position", { y: -2 });
+//     } else if (intersectedElement && intersectedElement.id === "bouteille3") {
+//       var son = document.querySelector("#son-bouteille3");
+//       son.components.sound.playSound();
 
-      objet.setAttribute("visible", "false");
-      objet.setAttribute("position", { y: -2 });
-    } else if (
-      intersectedElement &&
-      intersectedElement.id === "sac-poubelle_noir2"
-    ) {
-      var son = document.querySelector("#son-sac-poubelle_noir2");
-      son.components.sound.playSound();
+//       var objet = document.querySelector("#bouteille3");
+//       updateScore();
 
-      var objet = document.querySelector("#sac-poubelle_noir2");
-      updateScore();
+//       objet.setAttribute("visible", "false");
+//       objet.setAttribute("position", { y: -2 });
+//     } else if (intersectedElement && intersectedElement.id === "boite_pizza1") {
+//       var son = document.querySelector("#son-boite_pizza1");
+//       son.components.sound.playSound();
 
-      objet.setAttribute("visible", "false");
-      objet.setAttribute("position", { y: -2 });
-    } else if (
-      intersectedElement &&
-      intersectedElement.id === "sac-poubelle_gris1"
-    ) {
-      var son = document.querySelector("#son-sac-poubelle_gris1");
-      son.components.sound.playSound();
+//       var objet = document.querySelector("#boite_pizza1");
+//       updateScore();
 
-      var objet = document.querySelector("#sac-poubelle_gris1");
-      updateScore();
+//       objet.setAttribute("visible", "false");
+//       objet.setAttribute("position", { y: -2 });
+//     } else if (
+//       intersectedElement &&
+//       intersectedElement.id === "sac-poubelle_noir1"
+//     ) {
+//       var son = document.querySelector("#son-sac-poubelle_noir1");
+//       son.components.sound.playSound();
 
-      objet.setAttribute("visible", "false");
-      objet.setAttribute("position", { y: -2 });
-    }
-  });
+//       var objet = document.querySelector("#sac-poubelle_noir1");
+//       updateScore();
+
+//       objet.setAttribute("visible", "false");
+//       objet.setAttribute("position", { y: -2 });
+//     } else if (
+//       intersectedElement &&
+//       intersectedElement.id === "sac-poubelle_noir2"
+//     ) {
+//       var son = document.querySelector("#son-sac-poubelle_noir2");
+//       son.components.sound.playSound();
+
+//       var objet = document.querySelector("#sac-poubelle_noir2");
+//       updateScore();
+
+//       objet.setAttribute("visible", "false");
+//       objet.setAttribute("position", { y: -2 });
+//     } else if (
+//       intersectedElement &&
+//       intersectedElement.id === "sac-poubelle_gris1"
+//     ) {
+//       var son = document.querySelector("#son-sac-poubelle_gris1");
+//       son.components.sound.playSound();
+
+//       var objet = document.querySelector("#sac-poubelle_gris1");
+//       updateScore();
+
+//       objet.setAttribute("visible", "false");
+//       objet.setAttribute("position", { y: -2 });
+//     }
+//   });
