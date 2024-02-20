@@ -96,7 +96,7 @@ let dechets = [
   },
 ];
 
-let count = 0;
+let count = -1;
 let nombreDechetsTotal = 10;
 
 /* Fonction pour mettre à jour le score */
@@ -117,6 +117,9 @@ function updateScore() {
     );
   });
 }
+
+updateScore();
+
 
 /* Fonction pour générer des déchets avec des positions aléatoires */
 
