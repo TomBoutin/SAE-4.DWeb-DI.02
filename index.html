@@ -36,8 +36,8 @@
     <a-assets>
       <a-asset-item id="ciel" src="./Texture/free_-_skybox_anime_sky.glb"></a-asset-item>
       <img src="./Texture/herbe.jpg" id="herbe">
-      <!-- <a-asset-item id="tree" src="./model_3d/Tree/tree-test.glb"></a-asset-item> -->
-      <!-- <a-asset-item id="barriere" src="./model_3d/Barriere/Picket Fence.glb"></a-asset-item> -->
+      <a-asset-item id="tree" src="./model_3d/Tree/tree-test.glb"></a-asset-item>
+      <!-- <a-asset-item id="barriere" src="./model_3d/Barriere/Picket_Fence.glb"></a-asset-item> -->
       <a-asset-item id="barriere2" src="./model_3d/Barriere/Fence3.glb"></a-asset-item>
       <a-asset-item id="bat1" src="./model_3d/Building1/Building.glb"></a-asset-item>
       <a-asset-item id="bat2" src="./model_3d/Building2/Building.glb"></a-asset-item>
@@ -68,7 +68,57 @@
       <a-asset-item id="sac-poubelle_gris"
         src="./model_3d/OBJETS_INTERACTION/Sac_poubelle_gris/trah_bag_grey.glb"></a-asset-item>
       <!-- <a-asset-item id="tas-de-dechet" src="./model_3d/OBJETS_INTERACTION/Tas_de_dechet/Rubbish.glb"></a-asset-item> -->
+      <a-asset-item id="board1" src="./model_3d/Board/testboard.glb"></a-asset-item>
+      <a-asset-item id="board2" src="./model_3d/Board/boardvide.glb"></a-asset-item>
     </a-assets>
+
+    <!-- IMG -->
+    <a-assets>
+      <img id="déchet1" src="./IMG/déchet1.png">
+    </a-assets>
+    <a-assets>
+      <img id="déchet2" src="./IMG/déchet2.png">
+    </a-assets>
+    <a-assets>
+      <img id="déchet3" src="./IMG/déchet3.png">
+    </a-assets>
+    <a-assets>
+      <img id="déchet4" src="./IMG/déchet4.png">
+    </a-assets>
+    <a-assets>
+      <img id="manette" src="./IMG/manette.png">
+    </a-assets>
+    <a-assets>
+      <img id="wasd" src="./IMG/wasd.png">
+    </a-assets>
+    <a-assets>
+      <a-asset-item id="font" src="./Texture/font/Kanit-Bold-msdf.json"></a-asset-item>
+    </a-assets>
+
+
+    <a-image src="#déchet1" rotation="0 -90 0" scale="0.320 0.3 0.3"
+    position="-11.793 2.112 -3.946"></a-image>
+    <a-image src="#déchet2" rotation="0 -90 0" scale="0.320 0.3 0.3"
+    position="-11.793 2.453 -4.867"></a-image>
+    <a-image src="#déchet3" rotation="0 -90 0" scale="0.320 0.3 0.3"
+    position="-11.793 1.560 -5.278"></a-image>
+    <a-image src="#déchet4" rotation="0 -90 0" scale="0.320 0.3 0.3"
+    position="-11.793 1.368 -4.359"></a-image>
+    <a-image src="#manette" rotation="0 -90 0" scale="1.5 1.5 1.5"
+    position="-11.793 1.6 -10.3"></a-image>
+    <a-image src="#wasd" rotation="0 90 0" scale="1.5 1.5 1.5 "
+    position="-11.793 1.6 -12"></a-image>
+
+    <a-entity text="value: x3; color: #000000; width: 1; height:1; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10"  position="-11.75 1.85 -3.94" rotation="0 90 0"></a-entity>
+    <a-entity text="value: x1; color: #000000; width: 1; height:1; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10" position="-11.75 2.19 -4.85" rotation="0 90 0"></a-entity>
+    <a-entity text="value: x3; color: #000000; width: 1; height:1; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10" position="-11.75 1.280 -5.27" rotation="0 90 0"></a-entity>
+    <a-entity text="value: x3; color: #000000; width: 1; height:1; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10" position="-11.75 1.10 -4.35" rotation="0 90 0"></a-entity>
+
+    <a-entity text="value: Déplacements; color: #000000; width: 2; height:2; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10" position="-11.76 2.5 -11.3" rotation="0 90 0"></a-entity>
+
+
+
+
 
     <!-- SOUND -->
 
@@ -96,31 +146,27 @@
 
       <!-- SCORE -->
 
-      <!-- <a-entity position="30.5 0 -26.5">
+       <a-entity position="30.5 0 -26.5">
         <a-entity id="score1" class="score_air" rotation="18.548935659565274 0 0" scale="10 10 10"
           position="0 22.03488 -55.24763"
-          text="value: DÉCHETS:0/6; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10"
           material="color: #000000; blending: normal">
         </a-entity>
 
         <a-entity id="score2" class="score_air" rotation="18.548935659565274 -90 0" scale="10 10 10"
           position="43.11982 22.035 -2.43869"
-          text="value: DÉCHETS:0/6; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10"
           material="color: #000000; blending: normal"></a-entity>
 
         <a-entity id="score3" class="score_air" rotation="18.548935659565274 180 0" scale="10 10 10"
           position="4.71118 22.035 58.3797"
-          text="value: DÉCHETS:0/6; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10"
           material="color: #000000; blending: normal">
         </a-entity>
 
         <a-entity id="score4" class="score_air" rotation="18.548935659565274 90 0" scale="10 10 10"
           position="-45.6279 22.03488 1.05082"
-          text="value: DÉCHETS:0/6; color: #000000; width: 10; height:10; align: center; wrapCount: 20; font: ./Texture/font/Kanit-Bold-msdf.json; negate:false;; alphaTest: 10"
           material="color: #000000; blending: normal">
         </a-entity>
 
-      </a-entity> -->
+      </a-entity> 
 
       <!-- OBJECTS -->
       <a-entity>
@@ -476,7 +522,7 @@
         </a-plane>
 
         <!-- Arbres -->
-        <!-- <a-entity position="7 0 0" id="arbres1">
+        <a-entity position="7 0 0" id="arbres1">
 
           <a-entity position="0 0 -50">
             <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 196 0">
@@ -787,75 +833,6 @@
           </a-entity>
         </a-entity>
 
-        <a-entity position="-7.5 0 0">
-          <a-entity position="0 0 -40">
-            <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 279 0">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere1-arbre1" rotation="0 -90 0" scale="2 2 2" position="1.255 0.553 -0.307">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere2-arbre1" scale="2 2 2" position="0.34347 0.55339 -1.25492">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere3-arbre1" rotation="0 90 0" scale="2 2 2" position="-0.54264 0.553 -0.26445">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere4-arbre1" rotation="0 180 0" scale="2 2 2" position="0.34347 0.55339 0.66744">
-            </a-entity>
-            <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-          </a-entity>
-
-          <a-entity position="0 0 -30">
-            <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 168 0">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere1-arbre1" rotation="0 -90 0" scale="2 2 2" position="1.255 0.553 -0.307">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere2-arbre1" scale="2 2 2" position="0.34347 0.55339 -1.25492">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere3-arbre1" rotation="0 90 0" scale="2 2 2" position="-0.54264 0.553 -0.26445">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere4-arbre1" rotation="0 180 0" scale="2 2 2" position="0.34347 0.55339 0.66744">
-            </a-entity>
-            <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-          </a-entity>
-
-          <a-entity position="0 0 -20">
-            <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 90 0">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere1-arbre1" rotation="0 -90 0" scale="2 2 2" position="1.255 0.553 -0.307">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere2-arbre1" scale="2 2 2" position="0.34347 0.55339 -1.25492">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere3-arbre1" rotation="0 90 0" scale="2 2 2" position="-0.54264 0.553 -0.26445">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere4-arbre1" rotation="0 180 0" scale="2 2 2" position="0.34347 0.55339 0.66744">
-            </a-entity>
-            <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-          </a-entity>
-
-          <a-entity position="0 0 -10">
-                        <a-entity gltf-model="#barriere2" id="barriere1-arbre1" rotation="0 -90 0" scale="2 2 2" position="1.255 0.553 -0.307">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere2-arbre1" scale="2 2 2" position="0.34347 0.55339 -1.25492">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere3-arbre1" rotation="0 90 0" scale="2 2 2" position="-0.54264 0.553 -0.26445">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere4-arbre1" rotation="0 180 0" scale="2 2 2" position="0.34347 0.55339 0.66744">
-            </a-entity><a-entity gltf-model="#tree" position=".25 2.75 0"> </a-entity>
-            <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-          </a-entity>
-
-          <a-entity position="0 0 0">
-            <a-entity gltf-model="#tree" position=".25 2.75 0" rotation="0 180 0">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere1-arbre1" rotation="0 -90 0" scale="2 2 2" position="1.255 0.553 -0.307">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere2-arbre1" scale="2 2 2" position="0.34347 0.55339 -1.25492">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere3-arbre1" rotation="0 90 0" scale="2 2 2" position="-0.54264 0.553 -0.26445">
-            </a-entity>
-            <a-entity gltf-model="#barriere2" id="barriere4-arbre1" rotation="0 180 0" scale="2 2 2" position="0.34347 0.55339 0.66744">
-            </a-entity>
-            <a-plane color="#4A3624" rotation="-90 0 0" position=".35 0.001 -0.3" height="2" width="2"></a-plane>
-          </a-entity>
-        </a-entity> -->
 
         <!-- Maison -->
 
@@ -1134,72 +1111,21 @@
             rotation="0 0 0"></a-entity>
            <a-entity gltf-model="#bush2_parc" id="tree8" scale="0.5 0.5 0.5" position="46.77897 0 -54.05328" 
             rotation="0 0 0"></a-entity>
-
         </a-entity>
-
-
       </a-entity>
+
+      <a-entity id="boardtest1" gltf-model="#board1" position="-11.97 0.3095 -4.92" scale="0.47 0.44 0.4" rotation="0 0 0"></a-entity>
+
+      <a-entity id="boardvide1" gltf-model="#board2" position="-11.97 0.3095 -10.9" scale="0.47 0.44 0.4" rotation="0 0 0"></a-entity>
 
       <!-- SCORE ET COMPTEUR -->
       <section class="text">
 
         <!-- <h3 class="score">SCORE : <span id="score">0</span></h3> -->
 
-        <h3 class="compteur">DÉCHETS COLLECTÉS : <span id="counter">0</span> / 6</h3>
+        <h3 class="compteur">DÉCHETS COLLECTÉS : <span id="counter">0</span> / 10</h3>
 
       </section>
-
-      <!-- OBJETS INTERACTIFS -->
-
-      <!-- canettes -->
-      <a-entity gltf-model="#canette" id="canette1" position="-20.57778 0.03957 -53.53054" scale="2 2 2"
-        class="collectible clickable">
-      </a-entity>
-      <a-sound id="son-canette1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6"
-        position="-20.57778 0.03957 -53.53054">
-      </a-sound>
-
-      <!-- Bouteilles -->
-      <a-entity gltf-model="#bouteille" id="bouteille1" scale="0.1 0.1 0.1" position="7.46496 0.40085 2.49558"
-        class="collectible clickable">
-      </a-entity>
-      <a-sound id="son-bouteille1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6"
-        position="7.46496 0.40085 2.49558">
-      </a-sound>
-
-      <!-- Boite de pizza -->
-      <a-entity gltf-model="#boite_pizza" id="boite_pizza1" rotation="0 120 0" position="-8.18803 -0.00836 26.40926"
-        class="collectible clickable">
-      </a-entity>
-      <a-sound id="son-boite_pizza1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6"
-        position="-8.18803 -0.00836 26.40926">
-      </a-sound>
-
-      <!-- Sac poubelle noir -->
-      <a-entity gltf-model="#sac-poubelle_noir" id="sac-poubelle_noir1"
-        rotation="20.069565647842474 38.03694914534996 1.040491355957575" position="50.56496 0.50342 8.20747"
-        scale="3 3 3" class="collectible clickable">
-      </a-entity>
-      <a-sound id="son-sac-poubelle_noir1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6"
-        position="50.56496 0.50342 8.20747">
-      </a-sound>
-
-      <!-- Sac poubelle gris -->
-      <a-entity gltf-model="#sac-poubelle_gris" id="sac-poubelle_gris1"
-        rotation="17.17670174022695 3.5254093134399556 11.784022972455642" position="20.18225 0.60845 9.15884"
-        scale="3 3 3" class="collectible clickable">
-      </a-entity>
-      <a-sound id="son-sac-poubelle_gris1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6"
-        position="20.18225 0.60845 9.15884">
-      </a-sound>
-
-      <!-- Tas de déchets -->
-      <a-entity gltf-model="#tas-de-dechet" id="tas-de-dechet1" rotation="0 153 0" position="-7.65838 0 -34.63371"
-        scale="0.02 0.02 0.02" class="collectible clickable">
-      </a-entity>
-      <a-sound id="son-tas-de-dechet1" src="src: url(./Son/Minecraft Item Drop Sound Effect!.mp3)" volume=".6"
-        position="-7.65838 0 -34.63371">
-      </a-sound>
 
       <!-- SCRIPTS -->
       <script src="./script.js">
